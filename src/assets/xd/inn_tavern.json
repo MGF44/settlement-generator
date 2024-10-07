@@ -1,0 +1,596 @@
+{
+  "Food": {
+    "Squalid": [
+      {
+        "Item Name": "Humble Pie (tripe or cow heel)",
+        "Sell": "3 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Green Chili Stew",
+        "Sell": "3 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Grilled Snake and Macadamia",
+        "Sell": "3 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Frogs on Skewers",
+        "Sell": "3 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Lizard Gruel with Nutbread",
+        "Sell": "3 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Crisped Worm Skewers and Potatoes",
+        "Sell": "3 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ],
+    "Poor": [
+      {
+        "Item Name": "Mushroom Stew with Corn Bread",
+        "Sell": "6 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Leg of Mutton and Goose Eggs",
+        "Sell": "6 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Squash and Fish Soup",
+        "Sell": "6 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Rabbit and Baked Pumpkin",
+        "Sell": "6 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Bread-bowl Stew",
+        "Sell": "6 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Bog-beetle Dumplings",
+        "Sell": "6 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Barbecued Gopher Legs on a Stick",
+        "Sell": "6 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ],
+    "Modest": [
+      {
+        "Item Name": "Grilled Wild Boar Chops",
+        "Sell": "3 sp",
+        "Village": true,
+        "Town": true,
+        "City": false
+      },
+      {
+        "Item Name": "Broiled Salmon and Potatoes",
+        "Sell": "3 sp",
+        "Village": true,
+        "Town": true,
+        "City": false
+      },
+      {
+        "Item Name": "Roast Chicken and Potatoes",
+        "Sell": "3 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Smoked Sausage, Goose Eggs and Dates",
+        "Sell": "3 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Cheese Pie and Onion Soup",
+        "Sell": "3 sp",
+        "Village": true,
+        "Town": true,
+        "City": false
+      },
+      {
+        "Item Name": "Rabbit Stew and Willow Crackers",
+        "Sell": "3 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ],
+    "Comfortable": [
+      {
+        "Item Name": "Honey Braised Boar Ribs",
+        "Sell": "8 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Buffaloaf and Honeyed Corn",
+        "Sell": "8 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Rack of Lamb Platter",
+        "Sell": "8 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Pork Chop and Curds",
+        "Sell": "8 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Elven Bread",
+        "Sell": "8 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Baked Loin of Pork with Gravy",
+        "Sell": "8 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Beef Steak and Kidney Pie",
+        "Sell": "8 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ],
+    "Wealthy": [
+      {
+        "Item Name": "Smoked Salmon and Wild Berries",
+        "Sell": "2 gp",
+        "Village": true,
+        "Town": true,
+        "City": false
+      },
+      {
+        "Item Name": "Chocolate Covered Ants and Roast Pelican",
+        "Sell": "2 gp",
+        "Village": true,
+        "Town": false,
+        "City": false
+      },
+      {
+        "Item Name": "Barbecued Tiger Fish and Papaya",
+        "Sell": "2 gp",
+        "Village": true,
+        "Town": false,
+        "City": false
+      },
+      {
+        "Item Name": "Roast Chicken with Thyme",
+        "Sell": "2 gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Stuffed Trout, Cabbage, Succotash and Plum Pudding",
+        "Sell": "2 gp",
+        "Village": true,
+        "Town": false,
+        "City": false
+      },
+      {
+        "Item Name": "Braised Beef and Pears with Ginger",
+        "Sell": "2 gp",
+        "Village": true,
+        "Town": true,
+        "City": false
+      }
+    ],
+    "Aristocratic": [
+      {
+        "Item Name": "Roast Stag in Antler Sauce",
+        "Sell": "4 gp",
+        "Village": true,
+        "Town": false,
+        "City": false
+      },
+      {
+        "Item Name": "Poached and Peppered Quail Eggs",
+        "Sell": "4 gp",
+        "Village": true,
+        "Town": false,
+        "City": false
+      },
+      {
+        "Item Name": "Spiced Monkey Tail and Cashews",
+        "Sell": "4 gp",
+        "Village": true,
+        "Town": false,
+        "City": false
+      },
+      {
+        "Item Name": "Lobster in Tomato Cream Sauce",
+        "Sell": "4 gp",
+        "Village": true,
+        "Town": false,
+        "City": false
+      },
+      {
+        "Item Name": "Crab-stuffed Lobster Tail",
+        "Sell": "4 gp",
+        "Village": true,
+        "Town": false,
+        "City": false
+      },
+      {
+        "Item Name": "Roast Pheasant in Oyster Sauce",
+        "Sell": "4 gp",
+        "Village": true,
+        "Town": false,
+        "City": false
+      }
+    ]
+  },
+  "Drink": {
+    "Cheap": [
+      {
+        "Item Name": "Grog",
+        "Sell": "2 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Goblin Spit Ale",
+        "Sell": "2 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Turnip Wine",
+        "Sell": "2 cp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ],
+    "Ale": [
+      {
+        "Item Name": "Dwarven Ale",
+        "Sell": "4 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Spiced Ale",
+        "Sell": "4 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "King’s Ale",
+        "Sell": "4 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Trollbane Ale",
+        "Sell": "4 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ],
+    "Wine": [
+      {
+        "Item Name": "Desert Star Wine",
+        "Sell": "2 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Wight Wine",
+        "Sell": "2 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Rice Wine",
+        "Sell": "2 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ],
+    "Fine Wine": [
+      {
+        "Item Name": "Fey Wine",
+        "Sell": "10 gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Wild Orchid Wine",
+        "Sell": "10 gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Lotus Leaf Wine",
+        "Sell": "10 gp",
+        "Village": true,
+        "Town": false,
+        "City": false
+      },
+      {
+        "Item Name": "Stonesulder Wine",
+        "Sell": "10 gp",
+        "Village": true,
+        "Town": false,
+        "City": false
+      }
+    ],
+    "Assorted Other Drinks": [
+      {
+        "Item Name": "Cactus Spirits",
+        "Sell": "4 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Berry Brandy",
+        "Sell": "2 gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Bacon Beer",
+        "Sell": "2 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Scorpionweed Reserve",
+        "Sell": "10 gp",
+        "Village": false,
+        "Town": false,
+        "City": true
+      },
+      {
+        "Item Name": "Honeysuckle Mead",
+        "Sell": "2 gp",
+        "Village": true,
+        "Town": true,
+        "City": false
+      },
+      {
+        "Item Name": "Lemon Mead",
+        "Sell": "2 sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ]
+  },
+  "Trade Goods": [
+    {
+      "Item Name": "1 lb. of wheat",
+      "Sell": "1 cp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "1 lb. of flour",
+      "Sell": "2 cp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "1 lb. of salt",
+      "Sell": "5 cp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "1 lb. of ginger",
+      "Sell": "1 gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "1 lb. of cinnamon",
+      "Sell": "2 gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "1 lb. of pepper",
+      "Sell": "2 gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "1 lb. of saffron",
+      "Sell": "15 gp",
+      "Village": true,
+      "Town": false,
+      "City": false
+    }
+  ],
+  "Lodging": [
+    {
+      "Item Name": "Inn Stay (per day)",
+      "Category": "Squalid",
+      "Sell": "7 cp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Inn Stay (per day)",
+      "Category": "Poor",
+      "Sell": "1 sp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Inn Stay (per day)",
+      "Category": "Modest",
+      "Sell": "5 sp",
+      "Village": true,
+      "Town": true,
+      "City": false
+    },
+    {
+      "Item Name": "Inn Stay (per day)",
+      "Category": "Comfortable",
+      "Sell": "8 sp",
+      "Village": true,
+      "Town": true,
+      "City": false
+    },
+    {
+      "Item Name": "Inn Stay (per day)",
+      "Category": "Wealthy",
+      "Sell": "2 gp",
+      "Village": true,
+      "Town": false,
+      "City": false
+    },
+    {
+      "Item Name": "Inn Stay (per day)",
+      "Category": "Aristocratic",
+      "Sell": "4 gp",
+      "Village": true,
+      "Town": false,
+      "City": false
+    }
+  ],
+  "Services": {
+    "Coach Cab": [
+      {
+        "Item Name": "Between towns",
+        "Sell": "3 cp (per mile)",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Within a city",
+        "Sell": "1 cp (per mile)",
+        "Village": false,
+        "Town": false,
+        "City": true
+      }
+    ],
+    "Hireling": [
+      {
+        "Item Name": "Skilled",
+        "Sell": "2 gp (per day)",
+        "Village": true,
+        "Town": false,
+        "City": false
+      },
+      {
+        "Item Name": "Untrained",
+        "Sell": "2 sp (per day)",
+        "Village": true,
+        "Town": true,
+        "City": false
+      }
+    ],
+    "Messenger": [
+      {
+        "Item Name": "Messenger",
+        "Sell": "2 cp (per mile)",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ],
+    "Toll": [
+      {
+        "Item Name": "Road or Gate Toll",
+        "Sell": "1 cp",
+        "Village": true,
+        "Town": true,
+        "City": false
+      }
+    ],
+    "Ship's Passage": [
+      {
+        "Item Name": "Ship's Passage",
+        "Sell": "1 sp (per mile)",
+        "Village": true,
+        "Town": true,
+        "City": false
+      }
+    ]
+  }
+}

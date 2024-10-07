@@ -1,0 +1,75 @@
+[
+  {
+    "type": "Tropical",
+    "subTypes": [
+      {
+        "name": "Tropical Rainforest (Af)",
+        "description": "Hot and humid all year with significant rainfall, no dry season."
+      },
+      {
+        "name": "Tropical Monsoon (Am)",
+        "description": "Similar to tropical rainforest but with a short dry season."
+      },
+      {
+        "name": "Tropical Wet and Dry (Aw/As)",
+        "description": "Distinct wet and dry seasons, hot all year."
+      }
+    ]
+  },
+  {
+    "type": "Dry",
+    "subTypes": [
+      {
+        "name": "Desert (BWh, BWk)",
+        "description": "Arid climate with very little rainfall, hot (BWh) or cold (BWk)."
+      },
+      {
+        "name": "Steppe (BSh, BSk)",
+        "description": "Semi-arid climate with more rainfall than deserts, hot (BSh) or cold (BSk)."
+      }
+    ]
+  },
+  {
+    "type": "Temperate",
+    "subTypes": [
+      {
+        "name": "Mediterranean (Csa, Csb)",
+        "description": "Warm to hot, dry summers and mild, wet winters."
+      },
+      {
+        "name": "Humid Subtropical (Cfa, Cwa)",
+        "description": "Hot summers, mild winters, precipitation year-round or winter dry."
+      },
+      {
+        "name": "Oceanic (Cfb, Cfc)",
+        "description": "Mild temperatures, small temperature ranges, and precipitation year-round."
+      }
+    ]
+  },
+  {
+    "type": "Continental",
+    "subTypes": [
+      {
+        "name": "Warm Summer Continental (Dfb, Dwb)",
+        "description": "Warm summers, cold winters, year-round precipitation."
+      },
+      {
+        "name": "Cool Summer Continental (Dfc, Dwc, Dfd, Dwd)",
+        "description": "Cool summers, very cold winters, precipitation mostly in summer."
+      }
+    ]
+  },
+  {
+    "type": "Polar",
+    "subTypes": [
+      {
+        "name": "Tundra (ET)",
+        "description": "Cold all year, with brief, cool summers, limited vegetation."
+      },
+      {
+        "name": "Ice Cap (EF)",
+        "description": "Extremely cold all year, permanent ice and snow cover."
+      }
+    ]
+  }
+]

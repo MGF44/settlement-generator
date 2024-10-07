@@ -1,0 +1,259 @@
+{
+  "Gem Values": [
+    {
+      "Item Name": "Azurite",
+      "Price": 10,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Banded Agate",
+      "Price": 10,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Blue Quartz",
+      "Price": 10,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Eye Agate",
+      "Price": 10,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Hematite",
+      "Price": 10,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Lapis Lazuli",
+      "Price": 10,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Malachite",
+      "Price": 10,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Moss Agate",
+      "Price": 10,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Obsidian",
+      "Price": 10,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Rhodochrosite",
+      "Price": 10,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Tiger Eye",
+      "Price": 10,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Turquoise",
+      "Price": 10,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Bloodstone",
+      "Price": 50,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Carnelian",
+      "Price": 50,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Chalcedony",
+      "Price": 50,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Chrysoprase",
+      "Price": 50,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Citrine",
+      "Price": 50,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Jasper",
+      "Price": 50,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Moonstone",
+      "Price": 50,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Onyx",
+      "Price": 50,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Quartz",
+      "Price": 50,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Sardonyx",
+      "Price": 50,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Star Rose Quartz",
+      "Price": 50,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Zircon",
+      "Price": 50,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Amber",
+      "Price": 100,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Amethyst",
+      "Price": 100,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Chrysoberyl",
+      "Price": 100,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Coral",
+      "Price": 100,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Garnet",
+      "Price": 100,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Jade",
+      "Price": 100,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Jet",
+      "Price": 100,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Pearl",
+      "Price": 100,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Spinel",
+      "Price": 100,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Tourmaline",
+      "Price": 100,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Alexandrite",
+      "Price": 500,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Aquamarine",
+      "Price": 500,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Black Pearl",
+      "Price": 500,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Blue Spinel",
+      "Price": 500,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Peridot",
+      "Price": 500,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Topaz",
+      "Price": 500,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Blue Saphire",
+      "Price": 1000,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Emerald",
+      "Price": 1000,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Fire Opal",
+      "Price": 1000,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Opal",
+      "Price": 1000,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Star Ruby",
+      "Price": 1000,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Star Saphire",
+      "Price": 1000,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Yellow Saphire",
+      "Price": 1000,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Black Saphire",
+      "Price": 1000,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Diamond",
+      "Price": 1000,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Jacinth",
+      "Price": 1000,
+      "Currency": "gp"
+    },
+    {
+      "Item Name": "Ruby",
+      "Price": 1000,
+      "Currency": "gp"
+    }
+  ]
+}

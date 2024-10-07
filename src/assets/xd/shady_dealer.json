@@ -1,0 +1,145 @@
+{
+  "Adventuring Gear": [
+    {
+      "Item Name": "Acid (Vial)",
+      "Sell": 25,
+      "Buy": 12,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Antitoxin (Vial)",
+      "Sell": 50,
+      "Buy": 25,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Caltrops (bag of 20)",
+      "Sell": 5,
+      "Buy": 0.25,
+      "Currency": "sp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Clothes, Costume",
+      "Sell": 5,
+      "Buy": 0.25,
+      "Currency": "gp",
+      "Village": false,
+      "Town": false,
+      "City": true
+    },
+    {
+      "Item Name": "Manacles",
+      "Sell": 0.02,
+      "Buy": 0.01,
+      "Currency": "cp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Oil, Flask",
+      "Sell": 1,
+      "Buy": 0.05,
+      "Currency": "sp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Poison, Basic (vial)",
+      "Sell": 100,
+      "Buy": 50,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Ram, Portable",
+      "Sell": 4,
+      "Buy": 2,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Spikes, Iron (10)",
+      "Sell": 1,
+      "Buy": 0.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    }
+  ],
+  "Tools": {
+    "Artisan's Tools": [
+      {
+        "Item Name": "Disguise Kit",
+        "Sell": 25,
+        "Buy": 12,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Forgery Kit",
+        "Sell": 15,
+        "Buy": 7,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Poisoner's Kit",
+        "Sell": 50,
+        "Buy": 25,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Thieves' Tools",
+        "Sell": 25,
+        "Buy": 12,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ],
+    "Gaming Set": [
+      {
+        "Item Name": "Dice Set",
+        "Sell": 1,
+        "Buy": 0.05,
+        "Currency": "sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Playing Card Set",
+        "Sell": 5,
+        "Buy": 0.25,
+        "Currency": "sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ]
+  }
+}

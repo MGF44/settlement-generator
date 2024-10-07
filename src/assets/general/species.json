@@ -1,0 +1,18 @@
+[
+  { "name": "Aarakocra", "subSpecies": [], "distribution": 1 },
+  { "name": "Aasimar", "subSpecies": [], "distribution": 1 },
+  { "name": "Dragonborn", "subSpecies": [], "distribution": 1 },
+  { "name": "Dwarf", "subSpecies": [], "distribution": 1 },
+  { "name": "Elf", "subSpecies": [], "distribution": 1 },
+  { "name": "Firbolg", "subSpecies": [], "distribution": 1 },
+  { "name": "Genasi", "subSpecies": [], "distribution": 1 },
+  { "name": "Gnome", "subSpecies": [], "distribution": 1 },
+  { "name": "Goliath", "subSpecies": [], "distribution": 1 },
+  { "name": "Halfling", "subSpecies": [], "distribution": 1 },
+  { "name": "Halfelf", "subSpecies": [], "distribution": 1 },
+  { "name": "Human", "subSpecies": [], "distribution": 1 },
+  { "name": "Kobold", "subSpecies": [], "distribution": 1 },
+  { "name": "Orc", "subSpecies": [], "distribution": 1 },
+  { "name": "Tiefling", "subSpecies": [], "distribution": 1 },
+  { "name": "Tortle", "subSpecies": [], "distribution": 1 }
+]

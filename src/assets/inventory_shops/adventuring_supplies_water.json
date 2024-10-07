@@ -1,0 +1,147 @@
+[
+    
+    {
+      "name": "Spear",
+      "type": "Simple Melee Weapon",
+      "cost_normal": "1 gp",
+      "cost_cheap": "7 sp",
+      "cost_expensive": "2 gp",
+      "limited_stock": false,
+      "rural_locale": true,
+      "urban_locale": true,
+      "premium_locale": false
+    },
+    {
+      "name": "Net",
+      "type": "Martial Ranged Weapon",
+      "cost_normal": "1 gp",
+      "cost_cheap": "7 sp",
+      "cost_expensive": "2 gp",
+      "limited_stock": false,
+      "rural_locale": true,
+      "urban_locale": true,
+      "premium_locale": false
+    },
+    {
+      "name": "Fishing Tackle",
+      "type": "Adventuring Gear",
+      "cost_normal": "1 gp",
+      "cost_cheap": "7 sp",
+      "cost_expensive": "2 gp",
+      "limited_stock": false,
+      "rural_locale": true,
+      "urban_locale": true,
+      "premium_locale": false
+    },
+    {
+      "name": "Rowboat",
+      "type": "Waterborne Vehicles",
+      "cost_normal": "50 gp",
+      "cost_cheap": "38 gp",
+      "cost_expensive": "75 gp",
+      "limited_stock": true,
+      "rural_locale": false,
+      "urban_locale": true,
+      "premium_locale": true
+    },
+    {
+      "name": "1 lb. of Fishing Bait",
+      "type": "Trade Goods",
+      "cost_normal": "5 cp",
+      "cost_cheap": "3 cp",
+      "cost_expensive": "8 cp",
+      "limited_stock": false,
+      "rural_locale": true,
+      "urban_locale": true,
+      "premium_locale": false
+    },
+    {
+      "name": "Crystal",
+      "type": "Arcane Focus",
+      "cost_normal": "10 gp",
+      "cost_cheap": "7 gp",
+      "cost_expensive": "15 gp",
+      "limited_stock": true,
+      "rural_locale": false,
+      "urban_locale": true,
+      "premium_locale": true
+    },
+    {
+      "name": "Orb",
+      "type": "Arcane Focus",
+      "cost_normal": "20 gp",
+      "cost_cheap": "15 gp",
+      "cost_expensive": "30 gp",
+      "limited_stock": true,
+      "rural_locale": false,
+      "urban_locale": true,
+      "premium_locale": true
+    },
+    {
+      "name": "Rod",
+      "type": "Arcane Focus",
+      "cost_normal": "10 gp",
+      "cost_cheap": "7 gp",
+      "cost_expensive": "15 gp",
+      "limited_stock": true,
+      "rural_locale": false,
+      "urban_locale": true,
+      "premium_locale": true
+    },
+    {
+      "name": "Staff",
+      "type": "Arcane Focus",
+      "cost_normal": "5 gp",
+      "cost_cheap": "3 gp",
+      "cost_expensive": "8 gp",
+      "limited_stock": true,
+      "rural_locale": false,
+      "urban_locale": true,
+      "premium_locale": true
+    },
+    {
+      "name": "Wand",
+      "type": "Arcane Focus",
+      "cost_normal": "10 gp",
+      "cost_cheap": "7 gp",
+      "cost_expensive": "15 gp",
+      "limited_stock": true,
+      "rural_locale": false,
+      "urban_locale": true,
+      "premium_locale": true
+    },
+    {
+      "name": "Component Pouch",
+      "type": "Adventuring Gear",
+      "cost_normal": "25 gp",
+      "cost_cheap": "18 gp",
+      "cost_expensive": "38 gp",
+      "limited_stock": true,
+      "rural_locale": false,
+      "urban_locale": true,
+      "premium_locale": true
+    },
+    {
+      "name": "Potion of Healing",
+      "type": "Adventuring Gear",
+      "cost_normal": "50 gp",
+      "cost_cheap": "38 gp",
+      "cost_expensive": "75 gp",
+      "limited_stock": true,
+      "rural_locale": false,
+      "urban_locale": true,
+      "premium_locale": true
+    },
+    {
+      "name": "Spellbook",
+      "type": "Adventuring Gear",
+      "cost_normal": "50 gp",
+      "cost_cheap": "38 gp",
+      "cost_expensive": "75 gp",
+      "limited_stock": true,
+      "rural_locale": false,
+      "urban_locale": true,
+      "premium_locale": true
+    }
+  ]
+  

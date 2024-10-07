@@ -1,0 +1,226 @@
+[
+  {
+    "color": "Black",
+    "basic": { "min": 1, "max": 12 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 1, "max": 3 }
+  },
+  {
+    "color": "Gray",
+    "basic": { "min": 13, "max": 20 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 4, "max": 6 }
+  },
+  {
+    "color": "Platinum",
+    "basic": { "min": 21, "max": 28 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 7, "max": 9 }
+  },
+  {
+    "color": "White",
+    "basic": { "min": 29, "max": 36 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 10, "max": 12 }
+  },
+  {
+    "color": "Dark Blonde",
+    "basic": { "min": 37, "max": 44 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 13, "max": 15 }
+  },
+  {
+    "color": "Blonde",
+    "basic": { "min": 45, "max": 52 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 16, "max": 18 }
+  },
+  {
+    "color": "Bleach Blonde",
+    "basic": { "min": 53, "max": 60 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 19, "max": 21 }
+  },
+  {
+    "color": "Dark Redhead",
+    "basic": { "min": 61, "max": 68 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 22, "max": 24 }
+  },
+  {
+    "color": "Redhead",
+    "basic": { "min": 69, "max": 76 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 25, "max": 27 }
+  },
+  {
+    "color": "Light Redhead",
+    "basic": { "min": 77, "max": 84 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 28, "max": 30 }
+  },
+  {
+    "color": "Brunette",
+    "basic": { "min": 85, "max": 92 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 31, "max": 33 }
+  },
+  {
+    "color": "Auburn",
+    "basic": { "min": 93, "max": 100 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 34, "max": 36 }
+  },
+  {
+    "color": "Yellow",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 37, "max": 39 }
+  },
+  {
+    "color": "Amber",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 40, "max": 42 }
+  },
+  {
+    "color": "Brown",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 43, "max": 45 }
+  },
+  {
+    "color": "Hazel",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 46, "max": 48 }
+  },
+  {
+    "color": "Green",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 49, "max": 51 }
+  },
+  {
+    "color": "Blue",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 52, "max": 54 }
+  },
+  {
+    "color": "Gray",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 55, "max": 57 }
+  },
+  {
+    "color": "Aqua",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 58, "max": 60 }
+  },
+  {
+    "color": "Red",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 61, "max": 63 }
+  },
+  {
+    "color": "Purple",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 64, "max": 66 }
+  },
+  {
+    "color": "Pale Brown",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 67, "max": 69 }
+  },
+  {
+    "color": "Pale Blue",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 70, "max": 72 }
+  },
+  {
+    "color": "Pale Green",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 73, "max": 75 }
+  },
+  {
+    "color": "Pale Gray",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 76, "max": 78 }
+  },
+  {
+    "color": "Deep Blue",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 79, "max": 81 }
+  },
+  {
+    "color": "Violet Red",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 82, "max": 84 }
+  },
+  {
+    "color": "Orange",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 85, "max": 88 }
+  },
+  {
+    "color": "Spring Green",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 89, "max": 92 }
+  },
+  {
+    "color": "Sea Green",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 93, "max": 96 }
+  },
+  {
+    "color": "Emerald Green",
+    "basic": { "min": -1, "max": -1 },
+    "exotic": { "min": -1, "max": -1 },
+    "pale": { "min": -1, "max": -1 },
+    "fey": { "min": 97, "max": 100 }
+  }
+]

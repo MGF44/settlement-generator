@@ -1,0 +1,512 @@
+{
+  "Adventuring Gear": [
+    {
+      "Item Name": "Abacus",
+      "Sell": 2,
+      "Buy": 1,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": false
+    },
+    {
+      "Item Name": "Barrel",
+      "Sell": 2,
+      "Buy": 1,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Basket",
+      "Sell": 0.4,
+      "Buy": 0.2,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Blanket",
+      "Sell": 0.5,
+      "Buy": 0.25,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Bottle, Glass",
+      "Sell": 2,
+      "Buy": 1,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Bucket",
+      "Sell": 0.05,
+      "Buy": 0.02,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Candle",
+      "Sell": 0.01,
+      "Buy": 0.01,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Chain (10 feet)",
+      "Sell": 5,
+      "Buy": 2.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Chalk (1 piece)",
+      "Sell": 0.01,
+      "Buy": 0.01,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Chest",
+      "Sell": 5,
+      "Buy": 2.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": false
+    },
+    {
+      "Item Name": "Clothes, Common",
+      "Sell": 0.5,
+      "Buy": 0.25,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Clothes, Traveler's",
+      "Sell": 2,
+      "Buy": 1,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": false
+    },
+    {
+      "Item Name": "Crowbar",
+      "Sell": 2,
+      "Buy": 1,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Fishing Tackle",
+      "Sell": 1,
+      "Buy": 0.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Flask or Tankard",
+      "Sell": 0.02,
+      "Buy": 0.01,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Hammer",
+      "Sell": 1,
+      "Buy": 0.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Ink (1 ounce)",
+      "Sell": 10,
+      "Buy": 5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Ink Pen",
+      "Sell": 0.02,
+      "Buy": 0.01,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Jug or Pitcher",
+      "Sell": 0.02,
+      "Buy": 0.01,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Ladder (10-foot)",
+      "Sell": 0.1,
+      "Buy": 0.05,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Lantern, Hooded",
+      "Sell": 5,
+      "Buy": 2.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Lock",
+      "Sell": 10,
+      "Buy": 5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Mess Kit",
+      "Sell": 0.2,
+      "Buy": 0.1,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": false
+    },
+    {
+      "Item Name": "Steel Mirror",
+      "Sell": 5,
+      "Buy": 2.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Oil (Flask)",
+      "Sell": 0.1,
+      "Buy": 0.05,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Paper (one sheet)",
+      "Sell": 0.2,
+      "Buy": 0.1,
+      "Currency": "gp",
+      "Village": false,
+      "Town": true,
+      "City": false
+    },
+    {
+      "Item Name": "Parchement (one sheet)",
+      "Sell": 0.1,
+      "Buy": 0.05,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Miner's Pick",
+      "Sell": 2,
+      "Buy": 1,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Piton",
+      "Sell": 0.05,
+      "Buy": 0.02,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Pole (10-foot)",
+      "Sell": 0.05,
+      "Buy": 0.02,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Pot, Iron",
+      "Sell": 2,
+      "Buy": 1,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Pouch",
+      "Sell": 0.5,
+      "Buy": 0.2,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Rope, Hempen (50 feet)",
+      "Sell": 1,
+      "Buy": 0.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Rope, Silk (50 feet)",
+      "Sell": 10,
+      "Buy": 5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": false
+    },
+    {
+      "Item Name": "Sack",
+      "Sell": 0.01,
+      "Buy": 0.01,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Sealing Wax",
+      "Sell": 0.5,
+      "Buy": 0.25,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Shovel",
+      "Sell": 2,
+      "Buy": 1,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Soap",
+      "Sell": 0.02,
+      "Buy": 0.01,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Spikes, Iron (10)",
+      "Sell": 1,
+      "Buy": 0.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Two-Person Tent",
+      "Sell": 2,
+      "Buy": 1,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": false
+    },
+    {
+      "Item Name": "Tinderbox",
+      "Sell": 0.5,
+      "Buy": 0.25,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Torch",
+      "Sell": 0.01,
+      "Buy": 0.01,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Vial",
+      "Sell": 1,
+      "Buy": 0.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Waterskin",
+      "Sell": 0.2,
+      "Buy": 0.1,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    }
+  ],
+  "Tools": [
+    {
+      "Item Name": "Mason's Tools",
+      "Sell": 10,
+      "Buy": 5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Painter’s Supplies",
+      "Sell": 10,
+      "Buy": 5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Potter’s Tools",
+      "Sell": 10,
+      "Buy": 5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Dice Set",
+      "Sell": 0.1,
+      "Buy": 0.05,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Playing Card Set",
+      "Sell": 0.25,
+      "Buy": 0.125,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    }
+  ],
+  "Trade Goods": [
+    {
+      "Item Name": "1 lb. of wheat",
+      "Sell": 0.01,
+      "Buy": 0.01,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "1 lb. of flour",
+      "Sell": 0.02,
+      "Buy": 0.01,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "1 lb. of salt",
+      "Sell": 0.05,
+      "Buy": 0.02,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "1 lb. of ginger",
+      "Sell": 1,
+      "Buy": 0.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": false
+    },
+    {
+      "Item Name": "1 lb. of cinnamon",
+      "Sell": 2,
+      "Buy": 1,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": false
+    },
+    {
+      "Item Name": "1 lb. of pepper",
+      "Sell": 2,
+      "Buy": 1,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": false
+    },
+    {
+      "Item Name": "1 lb. of saffron",
+      "Sell": 15,
+      "Buy": 7,
+      "Currency": "gp",
+      "Village": false,
+      "Town": false,
+      "City": true
+    }
+  ]
+}

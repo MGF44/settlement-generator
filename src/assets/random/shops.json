@@ -1,0 +1,172 @@
+{
+  "Occupations": [
+    {
+      "Name": "Apothecaries"
+    },
+    {
+      "Name": "Fishmongers"
+    },
+    {
+      "Name": "Priests"
+    },
+    {
+      "Name": "Bakers"
+    },
+    {
+      "Name": "Furriers"
+    },
+    {
+      "Name": "Pursemakers"
+    },
+    {
+      "Name": "Barbers"
+    },
+    {
+      "Name": "Glovemakers"
+    },
+    {
+      "Name": "Roofers"
+    },
+    {
+      "Name": "Bathers"
+    },
+    {
+      "Name": "Harness-Makers"
+    },
+    {
+      "Name": "Ropemakers"
+    },
+    {
+      "Name": "Beer-Sellers"
+    },
+    {
+      "Name": "Hatmakers"
+    },
+    {
+      "Name": "Rugmakers"
+    },
+    {
+      "Name": "Blacksmiths"
+    },
+    {
+      "Name": "Hay Merchants"
+    },
+    {
+      "Name": "Saddlers"
+    },
+    {
+      "Name": "Bleachers"
+    },
+    {
+      "Name": "Illuminators"
+    },
+    {
+      "Name": "Scabbardmakers"
+    },
+    {
+      "Name": "Bookbinders"
+    },
+    {
+      "Name": "Inns"
+    },
+    {
+      "Name": "Sculptors"
+    },
+    {
+      "Name": "Booksellers"
+    },
+    {
+      "Name": "Jewelers"
+    },
+    {
+      "Name": "Shoemakers"
+    },
+    {
+      "Name": "Buckle Makers"
+    },
+    {
+      "Name": "Lawyers/Advocates"
+    },
+    {
+      "Name": "Spice Merchants"
+    },
+    {
+      "Name": "Butchers"
+    },
+    {
+      "Name": "Locksmiths"
+    },
+    {
+      "Name": "Tailors"
+    },
+    {
+      "Name": "Carpenters"
+    },
+    {
+      "Name": "Maidservants"
+    },
+    {
+      "Name": "Tanners"
+    },
+    {
+      "Name": "Chandlers"
+    },
+    {
+      "Name": "Masons"
+    },
+    {
+      "Name": "Taverns/Restaurants"
+    },
+    {
+      "Name": "Chicken Butchers"
+    },
+    {
+      "Name": "Mercers"
+    },
+    {
+      "Name": "Watercarriers"
+    },
+    {
+      "Name": "Clergy"
+    },
+    {
+      "Name": "Noble Households"
+    },
+    {
+      "Name": "Weavers"
+    },
+    {
+      "Name": "Coopers"
+    },
+    {
+      "Name": "Old-Clothes"
+    },
+    {
+      "Name": "Wine-Sellers"
+    },
+    {
+      "Name": "Copyists"
+    },
+    {
+      "Name": "Painters"
+    },
+    {
+      "Name": "Woodcarvers"
+    },
+    {
+      "Name": "Cutlers"
+    },
+    {
+      "Name": "Pastrycooks"
+    },
+    {
+      "Name": "Woodsellers"
+    },
+    {
+      "Name": "Doctors"
+    },
+    {
+      "Name": "Plasterers"
+    }
+  ]
+}

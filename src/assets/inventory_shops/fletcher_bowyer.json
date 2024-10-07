@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Crossbow, Light",
+    "cost_normal": "25 gp",
+    "cost_cheap": "18 gp",
+    "cost_expensive": "38 gp",
+    "type": "Weapon",
+    "limited_stock": true,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Shortbow",
+    "cost_normal": "25 gp",
+    "cost_cheap": "18 gp",
+    "cost_expensive": "38 gp",
+    "type": "Weapon",
+    "limited_stock": true,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Crossbow, Hand",
+    "cost_normal": "75 gp",
+    "cost_cheap": "56 gp",
+    "cost_expensive": "113 gp",
+    "type": "Weapon",
+    "limited_stock": true,
+    "rural_locale": false,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Crossbow, Heavy",
+    "cost_normal": "50 gp",
+    "cost_cheap": "38 gp",
+    "cost_expensive": "75 gp",
+    "type": "Weapon",
+    "limited_stock": true,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Longbow",
+    "cost_normal": "50 gp",
+    "cost_cheap": "38 gp",
+    "cost_expensive": "75 gp",
+    "type": "Weapon",
+    "limited_stock": true,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Arrows (20)",
+    "cost_normal": "1 gp",
+    "cost_cheap": "7 sp",
+    "cost_expensive": "2 gp",
+    "type": "Adventuring Gear",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Crossbow Bolts (20)",
+    "cost_normal": "1 gp",
+    "cost_cheap": "7 sp",
+    "cost_expensive": "2 gp",
+    "type": "Adventuring Gear",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Bowstring (5)",
+    "cost_normal": "2 gp",
+    "cost_cheap": "1 gp",
+    "cost_expensive": "3 gp",
+    "type": "Adventuring Gear",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Case, Crossbow Bolt",
+    "cost_normal": "1 gp",
+    "cost_cheap": "7 sp",
+    "cost_expensive": "2 gp",
+    "type": "Adventuring Gear",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Quiver",
+    "cost_normal": "1 gp",
+    "cost_cheap": "7 sp",
+    "cost_expensive": "2 gp",
+    "type": "Adventuring Gear",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  }
+]

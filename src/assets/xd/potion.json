@@ -1,0 +1,435 @@
+{
+  "Adventuring Gear": [
+    {
+      "Item Name": "Acid (Vial)",
+      "Sell": 25,
+      "Buy": 12,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Alchemist Fire",
+      "Sell": 50,
+      "Buy": 25,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Antitoxin",
+      "Sell": 50,
+      "Buy": 12,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Bottle, Glass",
+      "Sell": 2,
+      "Buy": 1,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Candle",
+      "Sell": 1,
+      "Buy": 0.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Component Pouch",
+      "Sell": 25,
+      "Buy": 12,
+      "Currency": "gp",
+      "Village": false,
+      "Town": false,
+      "City": true
+    },
+    {
+      "Item Name": "Flask",
+      "Sell": 0.02,
+      "Buy": 0.01,
+      "Currency": "cp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Healer's Kit",
+      "Sell": 5,
+      "Buy": 2.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Ink (1 ounce bottle)",
+      "Sell": 10,
+      "Buy": 5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Ink Pen",
+      "Sell": 0.02,
+      "Buy": 0.01,
+      "Currency": "cp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Jug",
+      "Sell": 0.02,
+      "Buy": 0.01,
+      "Currency": "cp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Oil (flask)",
+      "Sell": 1,
+      "Buy": 0.5,
+      "Currency": "sp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Perfume (vial)",
+      "Sell": 5,
+      "Buy": 2.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Poison, Basic (vial)",
+      "Sell": 100,
+      "Buy": 50,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Oil Flask",
+      "Sell": 1,
+      "Buy": 0.5,
+      "Currency": "sp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Perfume Vial",
+      "Sell": 5,
+      "Buy": 2.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Basic Poison",
+      "Sell": 100,
+      "Buy": 50,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Vial",
+      "Sell": 1,
+      "Buy": 0.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    }
+  ],
+  "Tools": {
+    "Artisan's Tools": [
+      {
+        "Item Name": "Alchemist's Supplies",
+        "Sell": 50,
+        "Buy": 25,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Brewer's Supplies",
+        "Sell": 20,
+        "Buy": 10,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Glassblower’s Tools",
+        "Sell": 30,
+        "Buy": 15,
+        "Currency": "gp",
+        "Village": false,
+        "Town": false,
+        "City": true
+      },
+      {
+        "Item Name": "Poisoner's Kit",
+        "Sell": 50,
+        "Buy": 25,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Herbalism Kit",
+        "Sell": 5,
+        "Buy": 2.5,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ]
+  },
+  "Miscellaneous": [
+    {
+      "Item Name": "Spell Components",
+      "Sell": "See Spell",
+      "Village": true,
+      "Town": true,
+      "City": true
+    }
+  ],
+  "Consumables": {
+    "Potions": [
+      {
+        "Item Name": "Potion of Healing",
+        "Sell": 50,
+        "Buy": 25,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Common"
+      },
+      {
+        "Item Name": "Philter of Love",
+        "Sell": 90,
+        "Buy": 45,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Uncommon"
+      },
+      {
+        "Item Name": "Potion of Poison",
+        "Sell": 100,
+        "Buy": 50,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Uncommon"
+      },
+      {
+        "Item Name": "Elixir of Health",
+        "Sell": 120,
+        "Buy": 60,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Rare"
+      },
+      {
+        "Item Name": "Potion of Fire Breath",
+        "Sell": 150,
+        "Buy": 75,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Uncommon"
+      },
+      {
+        "Item Name": "Potion of Greater Healing",
+        "Sell": 150,
+        "Buy": 75,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Uncommon"
+      },
+      {
+        "Item Name": "Potion of Climbing",
+        "Sell": 180,
+        "Buy": 90,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Common"
+      },
+      {
+        "Item Name": "Potion of Heroism",
+        "Sell": 180,
+        "Buy": 90,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Rare"
+      },
+      {
+        "Item Name": "Potion of Invisibility",
+        "Sell": 180,
+        "Buy": 90,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Very Rare"
+      },
+      {
+        "Item Name": "Potion of Mind Reading",
+        "Sell": 180,
+        "Buy": 90,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Rare"
+      },
+      {
+        "Item Name": "Potion of Water Breathing",
+        "Sell": 180,
+        "Buy": 90,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Uncommon"
+      },
+      {
+        "Item Name": "Potion of Animal Friendship",
+        "Sell": 200,
+        "Buy": 100,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Uncommon"
+      },
+      {
+        "Item Name": "Potion of Diminution",
+        "Sell": 270,
+        "Buy": 135,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Rare"
+      },
+      {
+        "Item Name": "Potion of Growth",
+        "Sell": 270,
+        "Buy": 135,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Uncommon"
+      },
+      {
+        "Item Name": "Potion of Gaseous Form",
+        "Sell": 300,
+        "Buy": 150,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Rare"
+      },
+      {
+        "Item Name": "Potion of Resistance",
+        "Sell": 300,
+        "Buy": 150,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Uncommon"
+      },
+      {
+        "Item Name": "Potion of Speed",
+        "Sell": 400,
+        "Buy": 200,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Very Rare"
+      },
+      {
+        "Item Name": "Potion of Superior Healing",
+        "Sell": 450,
+        "Buy": 225,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Very Rare"
+      },
+      {
+        "Item Name": "Potion of Flying",
+        "Sell": 500,
+        "Buy": 250,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Very Rare"
+      },
+      {
+        "Item Name": "Potion of Clairvoyance",
+        "Sell": 960,
+        "Buy": 480,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Rare"
+      },
+      {
+        "Item Name": "Potion of Vitality",
+        "Sell": 960,
+        "Buy": 480,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Very Rare"
+      },
+      {
+        "Item Name": "Potion of Supreme Healing",
+        "Sell": 1350,
+        "Buy": 675,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Very Rare"
+      },
+      {
+        "Item Name": "Potion of Invulnerability",
+        "Sell": 3840,
+        "Buy": 1920,
+        "Village": true,
+        "Town": true,
+        "City": true,
+        "Rarity": "Rare"
+      }
+    ]
+  }
+}

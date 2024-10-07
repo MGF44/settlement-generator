@@ -1,0 +1,200 @@
+[
+  {
+    "name": "Basket",
+    "type": "Adventuring Gear",
+    "cost_normal": "4 sp",
+    "cost_cheap": "3 sp",
+    "cost_expensive": "6 sp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": false
+  },
+  {
+    "name": "Cloak, Canvas",
+    "type": "Adventuring Gear",
+    "cost_normal": "7 sp",
+    "cost_cheap": "5 sp",
+    "cost_expensive": "11 sp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Cloak, Leather",
+    "type": "Adventuring Gear",
+    "cost_normal": "2 gp",
+    "cost_cheap": "1 gp",
+    "cost_expensive": "3 gp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": false
+  },
+  {
+    "name": "Cloak, Leather, Lined",
+    "type": "Adventuring Gear",
+    "cost_normal": "4 gp",
+    "cost_cheap": "3 gp",
+    "cost_expensive": "6 gp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Clothes, Common",
+    "type": "Clothing",
+    "cost_normal": "5 sp",
+    "cost_cheap": "3 sp",
+    "cost_expensive": "8 sp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": false
+  },
+  {
+    "name": "Clothes, Costume",
+    "type": "Clothing",
+    "cost_normal": "5 gp",
+    "cost_cheap": "3 gp",
+    "cost_expensive": "8 gp",
+    "limited_stock": true,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Clothes, Fine",
+    "type": "Clothing",
+    "cost_normal": "15 gp",
+    "cost_cheap": "11 gp",
+    "cost_expensive": "23 gp",
+    "limited_stock": true,
+    "rural_locale": false,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Clothes, Traveler's",
+    "type": "Clothing",
+    "cost_normal": "2 gp",
+    "cost_cheap": "1 gp",
+    "cost_expensive": "3 gp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": false
+  },
+  {
+    "name": "Component Pouch",
+    "type": "Clothing",
+    "cost_normal": "25 gp",
+    "cost_cheap": "18 gp",
+    "cost_expensive": "38 gp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Pouch",
+    "type": "Clothing",
+    "cost_normal": "5 sp",
+    "cost_cheap": "3 sp",
+    "cost_expensive": "8 sp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Robes",
+    "type": "Clothing",
+    "cost_normal": "1 gp",
+    "cost_cheap": "7 sp",
+    "cost_expensive": "2 gp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": false
+  },
+  {
+    "name": "Sack",
+    "type": "Clothing",
+    "cost_normal": "1 cp",
+    "cost_cheap": "1 cp",
+    "cost_expensive": "2 cp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": false
+  },
+  {
+    "name": "Tent, Two-person",
+    "type": "Clothing",
+    "cost_normal": "2 gp",
+    "cost_cheap": "1 gp",
+    "cost_expensive": "3 gp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": false
+  },
+  {
+    "name": "Bone Needle",
+    "type": "Miscellaneous",
+    "cost_normal": "3 cp",
+    "cost_cheap": "2 cp",
+    "cost_expensive": "5 cp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": false
+  },
+  {
+    "name": "Steel Needle",
+    "type": "Miscellaneous",
+    "cost_normal": "1 sp",
+    "cost_cheap": "1 sp",
+    "cost_expensive": "2 sp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": false
+  },
+  {
+    "name": "Cotton Thread (30 feet)",
+    "type": "Miscellaneous",
+    "cost_normal": "5 sp",
+    "cost_cheap": "3 sp",
+    "cost_expensive": "8 sp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Leather Cord (15 feet)",
+    "type": "Miscellaneous",
+    "cost_normal": "1 gp",
+    "cost_cheap": "7 sp",
+    "cost_expensive": "2 gp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": false
+  },
+  {
+    "name": "Weaver's Tools",
+    "type": "Tools",
+    "cost_normal": "1 gp",
+    "cost_cheap": "7 sp",
+    "cost_expensive": "2 gp",
+    "limited_stock": false,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": false
+  }
+]

@@ -1,0 +1,255 @@
+{
+  "Weapons": {
+    "Simple Ranged Weapons": [
+      {
+        "Item Name": "Sling",
+        "Damage": "1d4",
+        "Damage Type": "Bludgeoning",
+        "Properties": "Ammunition (range 30/120)",
+        "Sell": 1,
+        "Buy": 0.5,
+        "Currency": "sp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ],
+    "Martial Melee Weapons": [
+      {
+        "Item Name": "Whip",
+        "Damage": "1d4",
+        "Damage Type": "Slashing",
+        "Properties": "Finesse, Reach",
+        "Sell": 2,
+        "Buy": 1,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ],
+    "Martial Ranged Weapons": [
+      {
+        "Item Name": "Net",
+        "Damage": "Bludgeoning",
+        "Damage Type": "Special",
+        "Properties": "Thrown (range 5/15)",
+        "Sell": 1,
+        "Buy": 0.5,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ]
+  },
+  "Armor": {
+    "Light Armor": [
+      {
+        "Item Name": "Padded Leather Armor",
+        "Cost": "11+Dex",
+        "Armor Class": "Light",
+        "Stealth": "Disadvantage",
+        "Sell": 5,
+        "Buy": 2.5,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Leather Armor",
+        "Cost": "11+Dex",
+        "Armor Class": "Light",
+        "Stealth": "None",
+        "Sell": 10,
+        "Buy": 5,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Studded Leather Armor",
+        "Cost": "12+Dex",
+        "Armor Class": "Light",
+        "Stealth": "None",
+        "Sell": 45,
+        "Buy": 22,
+        "Currency": "gp",
+        "Village": false,
+        "Town": false,
+        "City": true
+      }
+    ],
+    "Medium Armor": [
+      {
+        "Item Name": "Hide Armor",
+        "Cost": "12 + Dex(2)",
+        "Armor Class": "Medium",
+        "Stealth": "None",
+        "Sell": 10,
+        "Buy": 5,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ],
+    "Shield": [
+      {
+        "Item Name": "Shield",
+        "Cost": "+2",
+        "Armor Class": "None",
+        "Stealth": "None",
+        "Sell": 10,
+        "Buy": 5,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ]
+  },
+  "Adventuring Gear": [
+    {
+      "Item Name": "Waterskin",
+      "Sell": 2,
+      "Buy": 1,
+      "Currency": "sp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Pouch",
+      "Sell": 5,
+      "Buy": 0.5,
+      "Currency": "sp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Quiver",
+      "Sell": 1,
+      "Buy": 0.5,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": false
+    },
+    {
+      "Item Name": "Sack",
+      "Sell": 0.01,
+      "Buy": 0.01,
+      "Currency": "cp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    }
+  ],
+  "Tools": {
+    "Artisan's Tools": [
+      {
+        "Item Name": "Cobbler's Tools",
+        "Sell": 5,
+        "Buy": 0.5,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      },
+      {
+        "Item Name": "Leatherworker's Tools",
+        "Sell": 5,
+        "Buy": 0.5,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": true
+      }
+    ],
+    "Musical Instruments": [
+      {
+        "Item Name": "Bagpipes",
+        "Sell": 30,
+        "Buy": 15,
+        "Currency": "gp",
+        "Village": false,
+        "Town": false,
+        "City": true
+      },
+      {
+        "Item Name": "Drums",
+        "Sell": 6,
+        "Buy": 3,
+        "Currency": "gp",
+        "Village": true,
+        "Town": true,
+        "City": false
+      }
+    ]
+  },
+  "Tack, Harness, and Drawn Vehicles": [
+    {
+      "Item Name": "Bit and Bridle",
+      "Sell": 2,
+      "Buy": 1,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    },
+    {
+      "Item Name": "Saddle",
+      "Subcategories": [
+        {
+          "Type": "Exotic",
+          "Sell": 60,
+          "Buy": 30,
+          "Currency": "gp",
+          "Village": false,
+          "Town": false,
+          "City": true
+        },
+        {
+          "Type": "Military",
+          "Sell": 20,
+          "Buy": 10,
+          "Currency": "gp",
+          "Village": true,
+          "Town": true,
+          "City": true
+        },
+        {
+          "Type": "Pack",
+          "Sell": 5,
+          "Buy": 0.5,
+          "Currency": "gp",
+          "Village": true,
+          "Town": true,
+          "City": true
+        },
+        {
+          "Type": "Riding",
+          "Sell": 10,
+          "Buy": 5,
+          "Currency": "gp",
+          "Village": true,
+          "Town": true,
+          "City": true
+        }
+      ]
+    },
+    {
+      "Item Name": "Saddlebags",
+      "Sell": 4,
+      "Buy": 2,
+      "Currency": "gp",
+      "Village": true,
+      "Town": true,
+      "City": true
+    }
+  ]
+}

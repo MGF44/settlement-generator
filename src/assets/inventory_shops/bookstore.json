@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Common book, Soft Bound",
+    "cost_normal": "8 gp",
+    "cost_cheap": "6 gp",
+    "cost_expensive": "12 gp",
+    "type": "Book",
+    "limited_stock": true,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": false
+  },
+  {
+    "name": "Common book, Hard Bound",
+    "cost_normal": "10 gp",
+    "cost_cheap": "7 gp",
+    "cost_expensive": "15 gp",
+    "type": "Book",
+    "limited_stock": true,
+    "rural_locale": true,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Uncommon book, Soft Bound",
+    "cost_normal": "15 gp",
+    "cost_cheap": "11 gp",
+    "cost_expensive": "23 gp",
+    "type": "Book",
+    "limited_stock": true,
+    "rural_locale": false,
+    "urban_locale": true,
+    "premium_locale": false
+  },
+  {
+    "name": "Uncommon book, Hard Bound",
+    "cost_normal": "20 gp",
+    "cost_cheap": "14 gp",
+    "cost_expensive": "30 gp",
+    "type": "Book",
+    "limited_stock": true,
+    "rural_locale": false,
+    "urban_locale": true,
+    "premium_locale": true
+  },
+  {
+    "name": "Rare book, Soft Bound",
+    "cost_normal": "30 gp",
+    "cost_cheap": "22 gp",
+    "cost_expensive": "45 gp",
+    "type": "Book",
+    "limited_stock": true,
+    "rural_locale": false,
+    "urban_locale": false,
+    "premium_locale": true
+  },
+  {
+    "name": "Rare book, Hard Bound",
+    "cost_normal": "50 gp",
+    "cost_cheap": "38 gp",
+    "cost_expensive": "75 gp",
+    "type": "Book",
+    "limited_stock": true,
+    "rural_locale": false,
+    "urban_locale": false,
+    "premium_locale": true
+  }
+]
