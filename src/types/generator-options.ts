@@ -6,6 +6,7 @@ interface SetOptions {
   size: SettlementSize;
   hasGuilds: Boolean;
   magicLevel: MagicLevel;
+  archetype: Archetype;
   incrementor?: SettlementIncrementor;
 }
 
@@ -31,10 +32,19 @@ interface Generic {
 type SettlementSize = "SETTLEMENT" | "VILLAGE" | "TOWN" | "CITY" | "METROPOLIS";
 type SettlementIncrementor = "SMALL" | "REGULAR" | "LARGE";
 type MagicLevel = "NO_MAGIC" | "LOW_MAGIC" | "COMMON_MAGIC" | "HIGH_MAGIC";
+type Archetype =
+  | "FISHING"
+  | "MINING"
+  | "TRADE"
+  | "FARMING"
+  | "RELIGIOUS"
+  | "MILITARY"
+  | "SHADY";
 
 export {
   SetOptions,
   Species,
+  Archetype,
   Climate,
   Landform,
   SubClimates,
