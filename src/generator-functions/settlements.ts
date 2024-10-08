@@ -1,8 +1,19 @@
-import { Archetype, SetOptions } from "../types/generator-options";
+import {
+  Archetype,
+  SetOptions,
+  SettlementIncrementor,
+  SettlementSize,
+} from "../types/generator-options";
 import fs from "fs";
-import farmingArchetypeMod from "./archetypes/farming";
-import fishingArchetypeMod from "./archetypes/fishing";
-import miningArchetypeMod from "./archetypes/mining";
+import {
+  farmingArchetypeMod,
+  fishingArchetypeMod,
+  militaryArchetypeMod,
+  miningArchetypeMod,
+  religiousArchetypeMod,
+  shadyArchetypeMod,
+  tradeArchetypeMod,
+} from "./archetypes";
 
 const getPossibleShops = (): Shop[] => {
   const inventories = "./src/assets/random";
@@ -20,19 +31,42 @@ const storesNo = (pop: number, sv: number) => {
   return perPopInt + (random <= rest ? 1 : 0);
 };
 
-const archetypeModifiers = (archetype: Archetype, shops: Shop[]) => {
-  return shops.map((shop: Shop) => {
-    if (archetype === "FARMING") {
-      return farmingArchetypeMod(shop, archetype);
-    }
-    if (archetype === "FISHING") {
-      return fishingArchetypeMod(shop, archetype);
-    }
-    if (archetype === "MINING") {
-      return miningArchetypeMod(shop, archetype);
-    }
-  });
+const archetypeMap = (archetype: Archetype, shop: Shop) => {
+  if (archetype === "FARMING") {
+    return farmingArchetypeMod(shop, archetype);
+  }
+  if (archetype === "FISHING") {
+    return fishingArchetypeMod(shop, archetype);
+  }
+  if (archetype === "MINING") {
+    return miningArchetypeMod(shop, archetype);
+  }
+  if (archetype === "MILITARY") {
+    return militaryArchetypeMod(shop, archetype);
+  }
+  if (archetype === "RELIGIOUS") {
+    return religiousArchetypeMod(shop, archetype);
+  }
+  if (archetype === "SHADY") {
+    return shadyArchetypeMod(shop, archetype);
+  }
+  if (archetype === "TRADE") {
+    return tradeArchetypeMod(shop, archetype);
+  }
 };
+
+const archetypeModifiers = (archetype: Archetype, shops: Shop[]) => {
+  return shops.map((shop: Shop) => archetypeMap(archetype, shop));
+};
+
+// const settlementModifiers = (
+//   setSize: SettlementSize,
+//   setInc: SettlementIncrementor,
+//   shops: Shop[]
+// ) => {
+
+// };
+
 const settlementSizeModifiers = () => {};
 const magicLevelModifiers = () => {};
 const incrementorModifiers = () => {};
@@ -43,8 +77,10 @@ const generateSettlement = (
   opt: SetOptions,
   { pop, dist }: { pop: number; dist: any }
 ) => {
-  const possibleShops = getPossibleShops();
+  const shops = getPossibleShops();
+  const possibleShops = archetypeModifiers(opt.archetype, shops);
 };
+
 interface Shop {
   name: string;
   SV: number;

@@ -124,6 +124,7 @@ const startSettlementGenerator = async (options: SetOptions) => {
   }
   Does it have guilds: ${options.hasGuilds ? "Yes" : "No"}
   How common is magic?: ${options.magicLevel}
+  Archetype: ${options.archetype}
   `;
 
   // const inputs = ` ${npc.name}, ${npc.gender} ${npc.species.name}, with ${
