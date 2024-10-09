@@ -1,5 +1,6 @@
 import {
   Archetype,
+  Landform,
   SetOptions,
   SettlementIncrementor,
   SettlementSize,
@@ -33,52 +34,52 @@ const storesNo = (pop: number, sv: number) => {
 
 const archetypeMap = (archetype: Archetype, shop: Shop) => {
   if (archetype === "FARMING") {
-    return farmingArchetypeMod(shop, archetype);
+    return farmingArchetypeMod(shop);
   }
   if (archetype === "FISHING") {
-    return fishingArchetypeMod(shop, archetype);
+    return fishingArchetypeMod(shop);
   }
   if (archetype === "MINING") {
-    return miningArchetypeMod(shop, archetype);
+    return miningArchetypeMod(shop);
   }
   if (archetype === "MILITARY") {
-    return militaryArchetypeMod(shop, archetype);
+    return militaryArchetypeMod(shop);
   }
   if (archetype === "RELIGIOUS") {
-    return religiousArchetypeMod(shop, archetype);
+    return religiousArchetypeMod(shop);
   }
   if (archetype === "SHADY") {
-    return shadyArchetypeMod(shop, archetype);
+    return shadyArchetypeMod(shop);
   }
   if (archetype === "TRADE") {
-    return tradeArchetypeMod(shop, archetype);
+    return tradeArchetypeMod(shop);
+  }
+};
+
+const terrainMap = (terrain: Landform, shop: Shop) => {
+  let shopMod = shop;
+  if (terrain.name === "Valley") {
   }
 };
 
 const archetypeModifiers = (archetype: Archetype, shops: Shop[]) => {
   return shops.map((shop: Shop) => archetypeMap(archetype, shop));
 };
-
-// const settlementModifiers = (
-//   setSize: SettlementSize,
-//   setInc: SettlementIncrementor,
-//   shops: Shop[]
-// ) => {
-
-// };
+const terrainModififers = (terrain: Landform, shops: Shop[]) => {
+  return shops.map((shop: Shop) => terrainMap(terrain, shop));
+};
 
 const settlementSizeModifiers = () => {};
 const magicLevelModifiers = () => {};
 const incrementorModifiers = () => {};
-const terrainModififers = () => {};
 const climateModififers = () => {};
 
 const generateSettlement = (
   opt: SetOptions,
   { pop, dist }: { pop: number; dist: any }
 ) => {
-  const shops = getPossibleShops();
-  const possibleShops = archetypeModifiers(opt.archetype, shops);
+  const posShops = getPossibleShops();
+  const posShopsArchetype = archetypeModifiers(opt.archetype, posShops);
 };
 
 interface Shop {

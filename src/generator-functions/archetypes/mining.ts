@@ -1,7 +1,7 @@
 import { Archetype } from "../../types/generator-options";
 import { Shop } from "../settlements";
 
-const miningArchetypeMod = (shop: Shop, archetype: Archetype): Shop => {
+const miningArchetypeMod = (shop: Shop): Shop => {
   const { name, SV } = shop;
   if (name === "Jewelers") return { ...shop, SV: SV * 0.6 };
   if (name === "Masons") return { ...shop, SV: SV * 0.7 };

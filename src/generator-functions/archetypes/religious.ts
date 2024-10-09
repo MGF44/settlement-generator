@@ -1,7 +1,7 @@
 import { Archetype } from "../../types/generator-options";
 import { Shop } from "../settlements";
 
-const religiousArchetypeMod = (shop: Shop, archetype: Archetype): Shop => {
+const religiousArchetypeMod = (shop: Shop): Shop => {
   const { name, SV } = shop;
   if (name === "Library") return { ...shop, SV: SV * 0.65 };
   if (name === "Temple") return { ...shop, SV: SV * 0.7 };
