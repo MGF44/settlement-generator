@@ -1,8 +1,15 @@
+
+import { IClimate } from "../db/interfaces/climate";
+import Generic from "../db/interfaces/generic";
+import ILandform from "../db/interfaces/landform";
+import Landform from "../db/interfaces/landform";
+import { ISpecies } from "../db/interfaces/species";
+
 interface SetOptions {
   name: string;
-  species: Species[];
-  terrain: Landform;
-  climate: Climate;
+  species: ISpecies[];
+  terrain: ILandform;
+  climate: IClimate;
   size: SettlementSize;
   hasGuilds: Boolean;
   magicLevel: MagicLevel;
@@ -10,24 +17,6 @@ interface SetOptions {
   incrementor?: SettlementIncrementor;
 }
 
-interface Species {
-  name: string;
-  subSpecies: Species[];
-  distribution: number;
-}
-
-interface Climate {
-  type: string;
-  subTypes: SubClimates[];
-}
-
-interface Landform extends Generic {}
-interface SubClimates extends Generic {}
-
-interface Generic {
-  name: string;
-  description: string;
-}
 
 type SettlementSize = "SETTLEMENT" | "VILLAGE" | "TOWN" | "CITY" | "METROPOLIS";
 type SettlementIncrementor = "SMALL" | "REGULAR" | "LARGE";
@@ -43,11 +32,8 @@ type Archetype =
 
 export {
   SetOptions,
-  Species,
   Archetype,
-  Climate,
   Landform,
-  SubClimates,
   SettlementSize,
   MagicLevel,
   SettlementIncrementor,

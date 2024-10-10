@@ -2,13 +2,10 @@ import fs from "fs";
 import path from "path";
 import {
   Archetype,
-  Climate,
-  Landform,
   MagicLevel,
   SetOptions,
   SettlementIncrementor,
   SettlementSize,
-  Species,
 } from "./types/generator-options";
 import genPopulation from "./generator-functions/population";
 import randomInt, {
@@ -19,23 +16,25 @@ import genNPC from "./generator-functions/npcs";
 import genRandomNPC from "./generator-functions/npcs";
 import dotenv from "dotenv";
 import capitalize from "./shared/capitalize";
-import NPC from "./types/npc";
 import { generateSettlement } from "./generator-functions/settlements";
+import readInventoriesJSONs from "./generator-functions/stores";
 // import readInventoriesJSONs from "./generator-functions/stores";
-
+import mongoose from "mongoose";
+import ILandform from "./db/interfaces/landform";
+import { IClimate } from "./db/interfaces/climate";
+import { Climate, SubClimate } from "./db/schemas/climate";
+import { ISpecies } from "./db/interfaces/species";
+import { Species } from "./db/schemas/species";
 dotenv.config();
 
-/*
- * Archetypes: FISHING, MINING, TRADE, FARMING, RELIGIOUS, MILITARY, SHADY
- */
 const createOptions = (): SetOptions => {
   const climatePath = path.resolve("src", "assets", "general", "climate.json");
   const terrainPath = path.resolve("src", "assets", "general", "terrain.json");
   const speciesPath = path.resolve("src", "assets", "general", "species.json");
 
-  const climates: Climate[] = JSON.parse(fs.readFileSync(climatePath, "utf8"));
-  const terrains: Landform[] = JSON.parse(fs.readFileSync(terrainPath, "utf8"));
-  const speciesList: Species[] = JSON.parse(
+  const climates: IClimate[] = JSON.parse(fs.readFileSync(climatePath, "utf8"));
+  const terrains: ILandform[] = JSON.parse(fs.readFileSync(terrainPath, "utf8"));
+  const speciesList: ISpecies[] = JSON.parse(
     fs.readFileSync(speciesPath, "utf8")
   );
   const archetypes: Archetype[] = [
@@ -82,11 +81,11 @@ const createOptions = (): SetOptions => {
   const distribution = randomNumbersWithFixedSum(species.length, 100);
 
   const newSpecies = species
-    .map((value: Species, ix: number) => ({
+    .map((value: ISpecies, ix: number) => ({
       ...value,
       distribution: distribution[ix],
     }))
-    .filter((v: Species) => v.distribution != 0);
+    .filter((v: ISpecies) => v.distribution != 0);
 
   return {
     name: (Math.random() + 1).toString(36).substring(7),
@@ -102,40 +101,43 @@ const createOptions = (): SetOptions => {
 };
 
 const startSettlementGenerator = async (options: SetOptions) => {
-  const { pop, dist } = genPopulation(options);
+  const mdbe = await mongoose.connect(process.env.MONGODB_URI as string)
+
+
+  // const { pop, dist } = genPopulation(options);
   // const npc: NPC = genRandomNPC({ pop, dist }, options);
 
-  const x = `
-  Name of the settlement: ${options.name}
-  Population of the settlement: ${pop}
-  Species in the settlement: \n ${options.species
-    .map((v) => {
-      return `\t - ${v.name}: ${v.distribution}%`;
-    })
-    .join("\n")}
-  Type of terrain: ${options.terrain.name} - ${options.terrain.description}
-  Climate of terrain: ${options.climate.type} ${
-    options.climate.subTypes.length > 0
-      ? "- " + options.climate.subTypes[randomIntInc(0, 1)].name
-      : ""
-  }
-  Size of the settlement: ${options.incrementor ? options.incrementor : ""} ${
-    options.size
-  }
-  Does it have guilds: ${options.hasGuilds ? "Yes" : "No"}
-  How common is magic?: ${options.magicLevel}
-  Archetype: ${options.archetype}
-  `;
+  // const x = `
+  // Name of the settlement: ${options.name}
+  // Population of the settlement: ${pop}
+  // Species in the settlement: \n ${options.species
+  //   .map((v) => {
+  //     return `\t - ${v.name}: ${v.distribution}%`;
+  //   })
+  //   .join("\n")}
+  // Type of terrain: ${options.terrain.name} - ${options.terrain.description}
+  // Climate of terrain: ${options.climate.type} ${
+  //   options.climate.subTypes.length > 0
+  //     ? "- " + options.climate.subTypes[randomIntInc(0, 1)].name
+  //     : ""
+  // }
+  // Size of the settlement: ${options.incrementor ? options.incrementor : ""} ${
+  //   options.size
+  // }
+  // Does it have guilds: ${options.hasGuilds ? "Yes" : "No"}
+  // How common is magic?: ${options.magicLevel}
+  // Archetype: ${options.archetype}
+  // `;
 
   // const inputs = ` ${npc.name}, ${npc.gender} ${npc.species.name}, with ${
   //   npc.skin
   // } skin, ${npc.eyes} eyes and ${npc.hair} hair. ${
   //   npc.additional ? npc.additional : ""
   // }`;
-  console.log(x);
   // console.log(inputs);
+  // readInventoriesJSONs();
   // readInventoriesJSONs(options, pop);
-  generateSettlement(options, { pop, dist });
+  // generateSettlement(options, { pop, dist });
 };
 
 startSettlementGenerator(createOptions());

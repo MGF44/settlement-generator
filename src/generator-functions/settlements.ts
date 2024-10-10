@@ -56,20 +56,10 @@ const archetypeMap = (archetype: Archetype, shop: Shop) => {
   }
 };
 
-const terrainMap = (terrain: Landform, shop: Shop) => {
-  let shopMod = shop;
-  if (terrain.name === "Valley") {
-  }
-};
-
 const archetypeModifiers = (archetype: Archetype, shops: Shop[]) => {
   return shops.map((shop: Shop) => archetypeMap(archetype, shop));
 };
-const terrainModififers = (terrain: Landform, shops: Shop[]) => {
-  return shops.map((shop: Shop) => terrainMap(terrain, shop));
-};
-
-const settlementSizeModifiers = () => {};
+const settlementSizeIncrementorModifiers = () => {};
 const magicLevelModifiers = () => {};
 const incrementorModifiers = () => {};
 const climateModififers = () => {};
