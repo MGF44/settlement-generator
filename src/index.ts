@@ -25,6 +25,15 @@ import { IClimate } from "./db/interfaces/climate";
 import { Climate, SubClimate } from "./db/schemas/climate";
 import { ISpecies } from "./db/interfaces/species";
 import { Species } from "./db/schemas/species";
+import IName from "./db/interfaces/name";
+import { Name } from "./db/schemas/name";
+import { IEyes, IHair } from "./db/interfaces/eyes_hair";
+import { Eyes } from "./db/schemas/eyes";
+import { Hair } from "./db/schemas/hair";
+import { ISkin } from "./db/interfaces/skin";
+import { Skin } from "./db/schemas/skin";
+import IRandomTrait from "./db/interfaces/random_trait";
+import { RandomTrait } from "./db/schemas/random_trait";
 dotenv.config();
 
 const createOptions = (): SetOptions => {
@@ -103,7 +112,13 @@ const createOptions = (): SetOptions => {
 const startSettlementGenerator = async (options: SetOptions) => {
   const mdbe = await mongoose.connect(process.env.MONGODB_URI as string)
 
-
+  // const hair: IHair[] = JSON.parse(fs.readFileSync(hairPath, "utf8"));
+  // const res = await Skin.insertMany(skins)
+  // console.log(res)
+  // const e = await Eyes.insertMany(eyes)
+  // const h = await Hair.insertMany(hair)
+  // console.log(e.length)
+  // console.log(h.length)
   // const { pop, dist } = genPopulation(options);
   // const npc: NPC = genRandomNPC({ pop, dist }, options);
 

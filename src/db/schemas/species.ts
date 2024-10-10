@@ -15,4 +15,4 @@ const speciesSchema = new Schema<ISpecies>({
 const SubSpecies = model<ISubSpecies>('SubSpecies', subSpeciesSchema);
 const Species = model<ISpecies>('Species', speciesSchema);
 
-export { Species, SubSpecies };
+export { Species, SubSpecies, speciesSchema };

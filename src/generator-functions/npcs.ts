@@ -1,9 +1,10 @@
+import { ISpecies } from "../db/interfaces/species";
 import randomInt, { randomIntInc } from "../shared/random-int";
-import { SetOptions, Species } from "../types/generator-options";
+import { SetOptions } from "../types/generator-options";
 import fs from "fs";
 interface NPC {
   name: string;
-  species: Species;
+  species: ISpecies;
   profession: string;
   appearance: string;
   age: number;
@@ -26,7 +27,7 @@ interface NPC {
 // Exotic: Perhaps elves or more feral, sylvan or unusual ancestry races.
 // Fey: Fey or other varied skin tone races.
 
-const traitGroupSkinEyes = (species: Species): string => {
+const traitGroupSkinEyes = (species: ISpecies): string => {
   switch (species.name) {
     case "Halfelf":
     case "Elf":
@@ -52,7 +53,7 @@ const traitGroupSkinEyes = (species: Species): string => {
   return "basic";
 };
 
-const traitGroupSkinHair = (species: Species): string => {
+const traitGroupSkinHair = (species: ISpecies): string => {
   switch (species.name) {
     case "Halfelf":
     case "Elf":
@@ -76,7 +77,7 @@ const traitGroupSkinHair = (species: Species): string => {
   return "basic";
 };
 
-const traitGroupSkin = (species: Species): string => {
+const traitGroupSkin = (species: ISpecies): string => {
   switch (species.name) {
     case "Firbolg":
     case "Aarakocra":
@@ -144,7 +145,7 @@ const getSkin = (skin: any, tGroup: string) => {
   })[0];
 };
 
-const generatePhysical = (species: Species) => {
+const generatePhysical = (species: ISpecies) => {
   const { eyes, hair, skin, random } = getJSONS();
   const tGroupEyes = traitGroupSkinEyes(species);
   const tGroupHair = traitGroupSkinHair(species);
@@ -157,7 +158,7 @@ const generatePhysical = (species: Species) => {
   return { eyesColor, hairColor, skinColor, addTraits };
 };
 
-const speciesNames = (species: Species, gender: string) => {
+const speciesNames = (species: ISpecies, gender: string) => {
   const { name } = species;
   const path = `./src/assets/npcs/names/${name.toLowerCase()}.json`;
   const dictionary = JSON.parse(fs.readFileSync(path, "utf-8"));
@@ -172,7 +173,7 @@ const GENDER = [
   ...Array(2).fill("non-binary"),
 ];
 
-const generateNPC = (species: Species) => {
+const generateNPC = (species: ISpecies) => {
   const gender = GENDER[Math.floor(Math.random() * GENDER.length)];
   const key =
     gender === "non-binary"
@@ -202,7 +203,7 @@ const genRandomNPC = (rawPop: any, options: SetOptions) => {
       dist: Math.abs((value as number) - spNo),
     }))
     .reduce((prev, n) => (prev.dist < n.dist ? prev : n));
-  const species: Species = options.species.filter(
+  const species: ISpecies = options.species.filter(
     (v) => v.name == chosen.species
   )[0];
   return generateNPC(species);
