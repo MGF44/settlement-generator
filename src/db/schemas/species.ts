@@ -1,4 +1,4 @@
-import { model, Schema } from "mongoose";
+import { model, Schema, Types } from "mongoose";
 import { IClimate, ISubClimate } from "../interfaces/climate";
 import { ISpecies, ISubSpecies } from "../interfaces/species";
 
@@ -7,12 +7,17 @@ const subSpeciesSchema = new Schema<ISubSpecies>({
     name: { type: String, required: true },
     distribution: { type: Number, required: false }
 })
+const SubSpecies = model<ISubSpecies>('SGSubspecies', subSpeciesSchema);
+
+
 const speciesSchema = new Schema<ISpecies>({
     name: { type: String, required: true },
-    subSpecies: [{ type: subSpeciesSchema, required: false }],
+    subSpecies: [{ type: Types.ObjectId, required: false, ref: 'SGSubspecies' }],
     distribution: { type: Number, required: false }
 });
-const SubSpecies = model<ISubSpecies>('SubSpecies', subSpeciesSchema);
-const Species = model<ISpecies>('Species', speciesSchema);
+
+
+const Species = model<ISpecies>('SGSpecies', speciesSchema);
+
 
 export { Species, SubSpecies, speciesSchema };

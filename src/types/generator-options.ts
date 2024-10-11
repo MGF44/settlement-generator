@@ -7,7 +7,7 @@ import { ISpecies } from "../db/interfaces/species";
 
 interface SetOptions {
   name: string;
-  species: ISpecies[];
+  species: { species: ISpecies, distribution: number }[];
   terrain: ILandform;
   climate: IClimate;
   size: SettlementSize;

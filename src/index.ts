@@ -1,5 +1,3 @@
-import fs from "fs";
-import path from "path";
 import {
   Archetype,
   MagicLevel,
@@ -7,95 +5,45 @@ import {
   SettlementIncrementor,
   SettlementSize,
 } from "./types/generator-options";
-import genPopulation from "./generator-functions/population";
 import randomInt, {
-  randomIntInc,
   randomNumbersWithFixedSum,
 } from "./shared/random-int";
-import genNPC from "./generator-functions/npcs";
-import genRandomNPC from "./generator-functions/npcs";
 import dotenv from "dotenv";
-import capitalize from "./shared/capitalize";
-import { generateSettlement } from "./generator-functions/settlements";
-import readInventoriesJSONs from "./generator-functions/stores";
-// import readInventoriesJSONs from "./generator-functions/stores";
 import mongoose from "mongoose";
 import ILandform from "./db/interfaces/landform";
 import { IClimate } from "./db/interfaces/climate";
-import { Climate, SubClimate } from "./db/schemas/climate";
 import { ISpecies } from "./db/interfaces/species";
-import { Species } from "./db/schemas/species";
-import IName from "./db/interfaces/name";
+import { getClimates } from "./db/querys/nature/climate";
+import { getLandforms } from "./db/querys/nature/landform";
+import { getSpecies } from "./db/querys/species/species";
+import { generateNPC } from "./generator-functions/npcs";
 import { Name } from "./db/schemas/name";
-import { IEyes, IHair } from "./db/interfaces/eyes_hair";
-import { Eyes } from "./db/schemas/eyes";
-import { Hair } from "./db/schemas/hair";
-import { ISkin } from "./db/interfaces/skin";
-import { Skin } from "./db/schemas/skin";
-import IRandomTrait from "./db/interfaces/random_trait";
-import { RandomTrait } from "./db/schemas/random_trait";
+import { Species } from "./db/schemas/species";
+import fs from 'fs'
+import IName from "./db/interfaces/name";
+import capitalize from "./shared/capitalize";
 dotenv.config();
 
-const createOptions = (): SetOptions => {
-  const climatePath = path.resolve("src", "assets", "general", "climate.json");
-  const terrainPath = path.resolve("src", "assets", "general", "terrain.json");
-  const speciesPath = path.resolve("src", "assets", "general", "species.json");
+const createOptions = async (): Promise<SetOptions> => {
+  const climates: IClimate[] = await getClimates();
+  const terrains: ILandform[] = await getLandforms();
+  const speciesList: ISpecies[] = await getSpecies();
+  const archetypes: Archetype[] = ["FISHING", "MINING", "TRADE", "FARMING", "RELIGIOUS", "MILITARY", "SHADY"];
 
-  const climates: IClimate[] = JSON.parse(fs.readFileSync(climatePath, "utf8"));
-  const terrains: ILandform[] = JSON.parse(fs.readFileSync(terrainPath, "utf8"));
-  const speciesList: ISpecies[] = JSON.parse(
-    fs.readFileSync(speciesPath, "utf8")
-  );
-  const archetypes: Archetype[] = [
-    "FISHING",
-    "MINING",
-    "TRADE",
-    "FARMING",
-    "RELIGIOUS",
-    "MILITARY",
-    "SHADY",
-  ];
-
-  const climate = climates[randomInt(0, climates.length - 1)];
-  const terrain = terrains[randomInt(0, terrains.length - 1)];
+  const climate: IClimate = climates[randomInt(0, climates.length - 1)];
+  const terrain: ILandform = terrains[randomInt(0, terrains.length - 1)];
   const archetype: Archetype = archetypes[randomInt(0, archetypes.length - 1)];
-
-  const species = speciesList
-    .sort(() => 0.5 - Math.random())
-    .slice(0, randomInt(0, speciesList.length / 2) + 1);
-
-  const sizes: SettlementSize[] = [
-    "SETTLEMENT",
-    "VILLAGE",
-    "TOWN",
-    "CITY",
-    "METROPOLIS",
-  ];
-
+  const sizes: SettlementSize[] = ["SETTLEMENT", "VILLAGE", "TOWN", "CITY", "METROPOLIS"];
   const incrementors: SettlementIncrementor[] = ["SMALL", "REGULAR", "LARGE"];
-
-  const mLevels: MagicLevel[] = [
-    "NO_MAGIC",
-    "LOW_MAGIC",
-    "COMMON_MAGIC",
-    "HIGH_MAGIC",
-  ];
+  const mLevels: MagicLevel[] = ["NO_MAGIC", "LOW_MAGIC", "COMMON_MAGIC", "HIGH_MAGIC"];
+  const species = speciesList.sort(() => 0.5 - Math.random()).slice(0, randomInt(0, speciesList.length / 2) + 1);
   const size = sizes[randomInt(0, sizes.length - 1)];
-
-  const incrementor =
-    ["VILLAGE", "TOWN", "CITY"].filter((v: string) => v === size).length > 0
-      ? incrementors[randomInt(0, incrementors.length - 1)]
-      : undefined;
-
+  const incrementor = ["VILLAGE", "TOWN", "CITY"].filter((v: string) => v === size).length > 0 ? incrementors[randomInt(0, incrementors.length - 1)] : undefined;
   const distribution = randomNumbersWithFixedSum(species.length, 100);
 
   const newSpecies = species
-    .map((value: ISpecies, ix: number) => ({
-      ...value,
-      distribution: distribution[ix],
-    }))
-    .filter((v: ISpecies) => v.distribution != 0);
-
+    .map((species: ISpecies, ix: number) => ({ species, distribution: distribution[ix] }))
+    .filter((v: any) => v.distribution != 0);
   return {
     name: (Math.random() + 1).toString(36).substring(7),
     species: newSpecies,
@@ -109,9 +57,15 @@ const createOptions = (): SetOptions => {
   };
 };
 
-const startSettlementGenerator = async (options: SetOptions) => {
+const startSettlementGenerator = async () => {
   const mdbe = await mongoose.connect(process.env.MONGODB_URI as string)
 
+  const options = await createOptions()
+  const npc = await generateNPC(options.species[0].species)
+  // const res = (await Name.find({}).populate('species')).map((value) => value.species)
+  // const species = [...new Set(res)]
+  // console.log(species)
+  // await Species.insertMany(species)
   // const hair: IHair[] = JSON.parse(fs.readFileSync(hairPath, "utf8"));
   // const res = await Skin.insertMany(skins)
   // console.log(res)
@@ -119,7 +73,7 @@ const startSettlementGenerator = async (options: SetOptions) => {
   // const h = await Hair.insertMany(hair)
   // console.log(e.length)
   // console.log(h.length)
-  // const { pop, dist } = genPopulation(options);
+  // const { pop, dist } = await genPopulation(options);
   // const npc: NPC = genRandomNPC({ pop, dist }, options);
 
   // const x = `
@@ -155,7 +109,7 @@ const startSettlementGenerator = async (options: SetOptions) => {
   // generateSettlement(options, { pop, dist });
 };
 
-startSettlementGenerator(createOptions());
+startSettlementGenerator();
 // { "name": "Knights’ Guild", "SV": undefined },
 // { "name": "Architects’ Guild", "SV": undefined },
 // { "name": "Sailors’ Guild", "SV": undefined },

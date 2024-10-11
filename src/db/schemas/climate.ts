@@ -1,5 +1,6 @@
-import { model, Schema } from "mongoose";
+import mongoose, { model, Schema, Types } from "mongoose";
 import { IClimate, ISubClimate } from "../interfaces/climate";
+import { ObjectId } from "mongoose"
 
 
 const subClimateSchema = new Schema<ISubClimate>({
@@ -7,13 +8,14 @@ const subClimateSchema = new Schema<ISubClimate>({
     description: { type: String, required: true }
 });
 
-const SubClimate = model<ISubClimate>('SubClimate', subClimateSchema);
+const SubClimate = model<ISubClimate>('SGSubClimate', subClimateSchema);
 
 const climateSchema = new Schema<IClimate>({
     type: { type: String, required: true },
-    subTypes: [{ type: subClimateSchema, required: true }]
-});
+    subTypes: [{ type: Types.ObjectId, required: true, ref: 'SGSubClimate' }]
+})
 
-const Climate = model<IClimate>('Climate', climateSchema);
+const Climate = model<IClimate>('SGClimate', climateSchema);
+
 
 export { Climate, SubClimate };

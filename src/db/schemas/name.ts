@@ -1,17 +1,12 @@
-import { model, Schema } from "mongoose";
-import { IClimate, ISubClimate } from "../interfaces/climate";
-import { ISpecies, ISubSpecies } from "../interfaces/species";
-import { speciesSchema } from "./species";
+import { model, Schema, Types } from "mongoose";
 import IName from "../interfaces/name";
-
-
 
 const nameSchema = new Schema<IName>({
     name: { type: String, required: true },
-    species: { type: speciesSchema, required: true },
+    species: { type: Types.ObjectId, required: true, ref: 'SGSpecies' },
     gender: { type: String, required: true }
 });
 
-const Name = model<IName>('Name', nameSchema);
+const Name = model<IName>('SGName', nameSchema);
 
 export { Name, nameSchema };
