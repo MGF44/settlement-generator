@@ -16,12 +16,14 @@ import { ISpecies } from "./db/interfaces/species";
 import { getClimates } from "./db/querys/nature/climate";
 import { getLandforms } from "./db/querys/nature/landform";
 import { getSpecies } from "./db/querys/species/species";
-import { generateNPC } from "./generator-functions/npcs";
+import genRandomNPC, { generateNPC } from "./generator-functions/npcs";
 import { Name } from "./db/schemas/name";
 import { Species } from "./db/schemas/species";
 import fs from 'fs'
 import IName from "./db/interfaces/name";
 import capitalize from "./shared/capitalize";
+import genPopulation from "./generator-functions/population";
+import NPC from "./db/interfaces/npc";
 dotenv.config();
 
 const createOptions = async (): Promise<SetOptions> => {
@@ -44,6 +46,7 @@ const createOptions = async (): Promise<SetOptions> => {
   const newSpecies = species
     .map((species: ISpecies, ix: number) => ({ species, distribution: distribution[ix] }))
     .filter((v: any) => v.distribution != 0);
+
   return {
     name: (Math.random() + 1).toString(36).substring(7),
     species: newSpecies,
@@ -61,21 +64,10 @@ const startSettlementGenerator = async () => {
   const mdbe = await mongoose.connect(process.env.MONGODB_URI as string)
 
   const options = await createOptions()
-  const npc = await generateNPC(options.species[0].species)
-  // const res = (await Name.find({}).populate('species')).map((value) => value.species)
-  // const species = [...new Set(res)]
-  // console.log(species)
-  // await Species.insertMany(species)
-  // const hair: IHair[] = JSON.parse(fs.readFileSync(hairPath, "utf8"));
-  // const res = await Skin.insertMany(skins)
-  // console.log(res)
-  // const e = await Eyes.insertMany(eyes)
-  // const h = await Hair.insertMany(hair)
-  // console.log(e.length)
-  // console.log(h.length)
-  // const { pop, dist } = await genPopulation(options);
-  // const npc: NPC = genRandomNPC({ pop, dist }, options);
 
+  const { pop, dist } = genPopulation(options);
+  const npc = await genRandomNPC(options);
+  
   // const x = `
   // Name of the settlement: ${options.name}
   // Population of the settlement: ${pop}
@@ -104,8 +96,6 @@ const startSettlementGenerator = async () => {
   //   npc.additional ? npc.additional : ""
   // }`;
   // console.log(inputs);
-  // readInventoriesJSONs();
-  // readInventoriesJSONs(options, pop);
   // generateSettlement(options, { pop, dist });
 };
 

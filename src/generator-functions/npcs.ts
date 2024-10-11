@@ -130,7 +130,6 @@ const choose = () => {
       return hairs.filter((v: any) => random >= v[tGroup].min && random <= v[tGroup].max)[0];
     },
     skin: (skins: ISkin[], random: number, tGroup: string) => {
-      console.log(tGroup)
       return skins.filter((sk: any) => {
         if (tGroup === "fey") {
           return random >= sk[tGroup].min && random <= sk[tGroup].max;
@@ -170,36 +169,27 @@ const randomGender = () => {
 
 const generateNPC = async (species: ISpecies) => {
   const gender = randomGender()
-  const res = await speciesNames(species, gender);
-  console.log(res, species.name, gender)
-  // console.log((species.name), (species as any)._id, gender)
-  // console.log(res)
-  // const physical = await generatePhysical(species);
-  // console.log(physical)
-  // return {
-  //   name,
-  //   gender,
-  //   species,
-  //   eyes: physical.eyesColor.color,
-  //   hair: physical.hairColor.color,
-  //   skin: physical.skinColor.color,
-  //   additional: physical.addTraits,
-  // };
+  const name = await speciesNames(species, gender);
+  const physical = await generatePhysical(species);
+  return {
+    name: name,
+    gender,
+    species,
+    eyes: physical.eyesColor.color,
+    hair: physical.hairColor.color,
+    skin: physical.skinColor.color,
+    additional: physical.addTraits,
+  };
 };
 
-const genRandomNPC = (rawPop: any, options: SetOptions) => {
-  // const { dist, pop } = rawPop;
-  // const spNo = randomInt(1, pop);
-  // const chosen = Object.entries(dist)
-  //   .map(([k, value]) => ({
-  //     species: k,
-  //     dist: Math.abs((value as number) - spNo),
-  //   }))
-  //   .reduce((prev, n) => (prev.dist < n.dist ? prev : n));
-  // const species: ISpecies = options.species.filter(
-  //   (v) => v.name == chosen.species
-  // )[0];
-  // return generateNPC(species);
+const genRandomNPC = async (options: SetOptions) => {
+  const { species } = options
+  const sum = species.reduce((p, n) => p + n.distribution, 0)
+  const random = randomInt(1, sum + 1);
+  const chosen = species
+    .map(({ distribution, species }) => ({ species, distribution: Math.abs((distribution as number) - random) }))
+    .reduce((prev, n) => (prev.distribution < n.distribution ? prev : n));
+  return generateNPC(chosen.species);
 };
 
 export default genRandomNPC;

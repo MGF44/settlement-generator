@@ -3,7 +3,6 @@ import {
   SetOptions,
   SettlementIncrementor,
   SettlementSize,
-  Species,
 } from "../types/generator-options";
 
 const numberPops = (
@@ -35,10 +34,7 @@ const numberPops = (
 const genPopulation = (options: SetOptions) => {
   const { species, size, incrementor } = options;
   const pop = numberPops(size, incrementor);
-  const reducePop = (acc: any, sp: Species) => ({
-    ...acc,
-    [sp.name]: Math.ceil((sp.distribution / 100) * pop),
-  });
+  const reducePop = (acc: any, sp: any) => ({ ...acc, [sp.name]: Math.ceil((sp.distribution / 100) * pop) });
   const dist = species.reduce(reducePop, {});
   return { pop, dist };
 };
