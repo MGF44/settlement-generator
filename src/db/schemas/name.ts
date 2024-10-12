@@ -1,5 +1,5 @@
 import { model, Schema, Types } from "mongoose";
-import IName from "../interfaces/name";
+import IName from "../interfaces/npc/name";
 
 const nameSchema = new Schema<IName>({
     name: { type: String, required: true },

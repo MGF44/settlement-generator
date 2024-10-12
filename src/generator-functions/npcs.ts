@@ -1,8 +1,3 @@
-import { ObjectId } from "mongoose";
-import { IEyes, IHair } from "../db/interfaces/eyes_hair";
-import IName from "../db/interfaces/name";
-import { ISkin } from "../db/interfaces/skin";
-import { ISpecies } from "../db/interfaces/species";
 import { getEyeColors } from "../db/querys/physical-traits/eyes";
 import { getHairColors } from "../db/querys/physical-traits/hair";
 import { getRandomTraits } from "../db/querys/physical-traits/random";
@@ -10,7 +5,10 @@ import { getSkinColors } from "../db/querys/physical-traits/skin";
 import { getSpeciesNames } from "../db/querys/species/names";
 import randomInt, { randomIntInc } from "../shared/random-int";
 import { SetOptions } from "../types/generator-options";
-import fs from "fs";
+import { IEyes, IHair } from "../db/interfaces/npc/eyes_hair";
+import IName from "../db/interfaces/npc/name";
+import { ISkin } from "../db/interfaces/npc/skin";
+import { ISpecies } from "../db/interfaces/npc/species";
 interface NPC {
   name: string;
   species: ISpecies;

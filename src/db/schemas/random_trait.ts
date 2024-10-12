@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import IRandomTrait from "../interfaces/random_trait";
+import IRandomTrait from "../interfaces/npc/random_trait";
 
 
 const randomTraitSchema = new Schema<IRandomTrait>({

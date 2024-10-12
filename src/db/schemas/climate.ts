@@ -1,6 +1,5 @@
 import mongoose, { model, Schema, Types } from "mongoose";
-import { IClimate, ISubClimate } from "../interfaces/climate";
-import { ObjectId } from "mongoose"
+import { IClimate, ISubClimate } from "../interfaces/land/climate";
 
 
 const subClimateSchema = new Schema<ISubClimate>({
