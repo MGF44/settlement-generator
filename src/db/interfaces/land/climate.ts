@@ -1,5 +1,5 @@
+import Generic from "../npc/generic";
 
-import Generic from "./generic";
 
 interface IClimate {
     type: string;

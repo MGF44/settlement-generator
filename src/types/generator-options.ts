@@ -1,9 +1,7 @@
-
-import { IClimate } from "../db/interfaces/climate";
-import Generic from "../db/interfaces/generic";
-import ILandform from "../db/interfaces/landform";
-import Landform from "../db/interfaces/landform";
-import { ISpecies } from "../db/interfaces/species";
+import { IClimate } from "../db/interfaces/land/climate";
+import ILandform from "../db/interfaces/land/landform";
+import { ISpecies } from "../db/interfaces/npc/species";
+import Landform from "../db/schemas/landform";
 
 interface SetOptions {
   name: string;

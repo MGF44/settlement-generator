@@ -3,6 +3,9 @@ import fs from "fs";
 import { InventoryItemAvailability } from "../types/store";
 import { SetOptions } from "../types/generator-options";
 import path from "path";
+import capitalize from "../shared/capitalize";
+import IInventoryItem from "../db/interfaces/shop/inventory_item";
+import IShopArchetype from "../db/interfaces/shop/shop_archetype";
 
 
 type StoreType = 'ADVENTURING SUPPLIES' |
@@ -27,34 +30,24 @@ type StoreType = 'ADVENTURING SUPPLIES' |
   'TEMPLE_SUPPLIES' |
   'TRANSPORTATION';
 
-interface InventoryItem {
-  name: string,
-  type: string,
-  cost_normal: string,
-  cost_cheap: string,
-  cost_expensive: string,
-  limited_stock: boolean,
-  rural_locale: boolean,
-  urban_locale: boolean,
-  premium_locale: boolean
-}
-
 interface Store {
   type: StoreType;
-  inventory: InventoryItem[]
+  inventory: IInventoryItem[]
 }
 
-const readInventoriesJSONs = (opt: SetOptions, pop: number) => {
-  const inventories = path.resolve("src", "assets", "inventory_shops");
-  const files = fs.readdirSync(inventories);
-  for (let index = 0; index < files.length; index++) {
-    const element = files[index];
-    const raw = fs.readFileSync(inventories.concat("/", element), "utf8");
+const readInventoriesJSONs = (opt: SetOptions, pop: number): IShopArchetype[] => {
+  const inventoriesPath = path.resolve("src", "assets", "inventory_shops");
+  const files = fs.readdirSync(inventoriesPath);
+  return files.map((fileName: string) => {
+    const raw = fs.readFileSync(inventoriesPath.concat("/", fileName), "utf8");
     const inventory = JSON.parse(raw);
-    const [title] = element.split('.')
-    const type = title.replace('_', ' ').toUpperCase() as StoreType
-    const store: Store = { type, inventory }
-  }
+    const [title] = fileName.split('.')
+    const archetype = title.replace('_', ' ').toUpperCase() as StoreType
+    return {
+      archetype,
+      inventory
+    }
+  })
 };
 
 export default readInventoriesJSONs;

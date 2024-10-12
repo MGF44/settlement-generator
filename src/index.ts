@@ -10,20 +10,17 @@ import randomInt, {
 } from "./shared/random-int";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import ILandform from "./db/interfaces/landform";
-import { IClimate } from "./db/interfaces/climate";
-import { ISpecies } from "./db/interfaces/species";
 import { getClimates } from "./db/querys/nature/climate";
 import { getLandforms } from "./db/querys/nature/landform";
 import { getSpecies } from "./db/querys/species/species";
-import genRandomNPC, { generateNPC } from "./generator-functions/npcs";
-import { Name } from "./db/schemas/name";
-import { Species } from "./db/schemas/species";
 import fs from 'fs'
-import IName from "./db/interfaces/name";
-import capitalize from "./shared/capitalize";
 import genPopulation from "./generator-functions/population";
-import NPC from "./db/interfaces/npc";
+import readInventoriesJSONs from "./generator-functions/stores";
+import IPossibleShop from "./db/interfaces/shop/possible_shops";
+import IShopArchetype from "./db/interfaces/shop/shop_archetype";
+import { IClimate } from "./db/interfaces/land/climate";
+import ILandform from "./db/interfaces/land/landform";
+import { ISpecies } from "./db/interfaces/npc/species";
 dotenv.config();
 
 const createOptions = async (): Promise<SetOptions> => {
@@ -31,7 +28,6 @@ const createOptions = async (): Promise<SetOptions> => {
   const terrains: ILandform[] = await getLandforms();
   const speciesList: ISpecies[] = await getSpecies();
   const archetypes: Archetype[] = ["FISHING", "MINING", "TRADE", "FARMING", "RELIGIOUS", "MILITARY", "SHADY"];
-
   const climate: IClimate = climates[randomInt(0, climates.length - 1)];
   const terrain: ILandform = terrains[randomInt(0, terrains.length - 1)];
   const archetype: Archetype = archetypes[randomInt(0, archetypes.length - 1)];
@@ -60,14 +56,24 @@ const createOptions = async (): Promise<SetOptions> => {
   };
 };
 
+const getPossibleShops = (): IPossibleShop[] => {
+  const inventories = "./src/assets/random";
+  const json = JSON.parse(
+    fs.readFileSync(inventories + "/" + "shops_f.json", "utf8")
+  );
+  return json["UniqueProfessions"];
+};
+
 const startSettlementGenerator = async () => {
   const mdbe = await mongoose.connect(process.env.MONGODB_URI as string)
 
   const options = await createOptions()
-
   const { pop, dist } = genPopulation(options);
-  const npc = await genRandomNPC(options);
-  
+
+  const inventories: IShopArchetype[] = readInventoriesJSONs(options, pop)
+
+
+
   // const x = `
   // Name of the settlement: ${options.name}
   // Population of the settlement: ${pop}
@@ -96,6 +102,7 @@ const startSettlementGenerator = async () => {
   //   npc.additional ? npc.additional : ""
   // }`;
   // console.log(inputs);
+
   // generateSettlement(options, { pop, dist });
 };
 
