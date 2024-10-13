@@ -16,6 +16,7 @@ import metropolisMod from "./size/metropolis";
 import cityMod from "./size/city";
 import IPossibleShop from "../db/interfaces/shop/possible_shops";
 import { PossibleShop } from "../db/schemas/shop/possible_shop";
+import { generateStore } from "./stores";
 
 const storesNo = (pop: number, sv: number) => {
   const perPop = pop / sv;
@@ -69,8 +70,7 @@ const generateSettlement = async (opt: SetOptions) => {
   const adjustedShops = archMods(opt.archetype, sizeIncMods(opt.size, possibleShops))
     .map((shop: IPossibleShop) => ({ shop, amount: storesNo(opt.population, shop.SV) }))
     .filter(({ amount }) => amount > 0)
-
-  
+  return await Promise.all(adjustedShops.map(async ({ shop, amount }) => Promise.all([...Array(amount).keys()].map(async () => await generateStore(shop, opt)))))
 };
 
 

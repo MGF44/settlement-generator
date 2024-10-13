@@ -1,5 +1,5 @@
-import { IEyes } from "../../interfaces/eyes_hair"
-import { Eyes } from "../../schemas/eyes"
+import { IEyes } from "../../interfaces/npc/eyes_hair"
+import { Eyes } from "../../schemas/npc/eyes"
 
 const getEyeColors = async (): Promise<IEyes[]> => {
     return await Eyes.find({})

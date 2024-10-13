@@ -1,8 +1,6 @@
-import { ObjectId, Query } from "mongoose"
-import IName from "../../interfaces/name"
-import { ISpecies } from "../../interfaces/species"
-import { Name } from "../../schemas/name"
-import { Species } from "../../schemas/species"
+import IName from "../../interfaces/npc/name"
+import { ISpecies } from "../../interfaces/npc/species"
+import { Name } from "../../schemas/npc/name"
 
 
 const getSpeciesNames = async (species: ISpecies, gender?: string): Promise<IName[]> => {

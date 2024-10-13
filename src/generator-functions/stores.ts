@@ -10,6 +10,8 @@ import { PossibleShop } from "../db/schemas/shop/possible_shop";
 import IPossibleShop from "../db/interfaces/shop/possible_shops";
 import { ShopArchetype } from "../db/schemas/shop/shop_archetype";
 import INPC from "../db/schemas/npc/npc";
+import genRandomNPC, { generateNPC } from "./npcs";
+import randomInt, { randomIntInc } from "../shared/random-int";
 
 type StoreType = 'ADVENTURING SUPPLIES' |
   'ADVENTURING SUPPLIES_ARTS' |
@@ -36,23 +38,63 @@ type StoreType = 'ADVENTURING SUPPLIES' |
 
 class Store {
   storeName?: string;
-  archetype?: StoreType
-  inventory: InventoryItem[] = [];
+  _archetype?: StoreType
+  shopType: string;
+  _inventory: InventoryItem[] = [];
   storeOwner!: INPC;
-  constructor(name: string, owner: INPC, inventory?: InventoryItem[], archetype?: StoreType) {
+  storeApprentices?: INPC[]
+  constructor(name: string, owner: INPC, shopType: string, inventory?: InventoryItem[], archetype?: StoreType) {
     this.storeName = name
     this.storeOwner = owner
+    this.shopType = shopType
     if (inventory) {
       this.inventory = inventory;
     }
     if (archetype) {
-      this.archetype = archetype
+      this._archetype = archetype
     }
+  }
+
+  set archetype(archetype: StoreType) {
+    this._archetype = archetype
+  }
+
+  get archetype(): StoreType | undefined {
+    return this._archetype
+  }
+
+  set inventory(inventory: InventoryItem[]) {
+    this._inventory = inventory
+  }
+
+  get inventory(): InventoryItem[] {
+    return this.inventory
+  }
+
+  addApprentice(npc: INPC) {
+    this.storeApprentices?.push(npc)
   }
 }
 
-const generateStore = (shop: IPossibleShop) => {
-  if (shop.archetype) {
-    ShopArchetype.find({ archetype: shop.archetype })
+const generateStore = async (shop: IPossibleShop, opt: SetOptions) => {
+  const name = (Math.random() + 1).toString(36).substring(7);
+  const owner = await genRandomNPC(opt);
+  const store = new Store(name, owner, shop.name)
+  const random = randomIntInc(0, 1)
+  if (random === 0) {
+    const noApprentices = randomIntInc(1, 3);
+    [...Array(noApprentices).keys()]
+      .forEach(async () => {
+        const apprentice = await genRandomNPC(opt)
+        store.addApprentice(apprentice)
+      })
   }
+  if (shop.archetype) {
+    store.archetype = shop.archetype as StoreType
+    const res = await ShopArchetype.findOne({ archetype: shop.archetype })
+    store.inventory = res?.inventory || []
+  }
+  return store;
 }
+
+export { generateStore, Store }

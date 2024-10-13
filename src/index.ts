@@ -64,7 +64,7 @@ const startSettlementGenerator = async () => {
 
   const options = await createOptions()
   const stores  = await generateSettlement(options)
-
+  console.log(stores)
 
   // const x = `
   // Name of the settlement: ${options.name}
