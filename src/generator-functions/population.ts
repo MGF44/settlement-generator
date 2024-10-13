@@ -31,12 +31,5 @@ const numberPops = (
   return Math.round(pops[size](inc) / 10) * 10;
 };
 
-const genPopulation = (options: SetOptions) => {
-  const { species, size, incrementor } = options;
-  const pop = numberPops(size, incrementor);
-  const reducePop = (acc: any, sp: any) => ({ ...acc, [sp.name]: Math.ceil((sp.distribution / 100) * pop) });
-  const dist = species.reduce(reducePop, {});
-  return { pop, dist };
-};
 
-export default genPopulation;
+export default numberPops;

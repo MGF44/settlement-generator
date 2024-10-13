@@ -1,11 +1,8 @@
 import {
   Archetype,
-  Landform,
   SetOptions,
-  SettlementIncrementor,
   SettlementSize,
 } from "../types/generator-options";
-import fs from "fs";
 import {
   farmingArchetypeMod,
   fishingArchetypeMod,
@@ -17,7 +14,8 @@ import {
 } from "./archetypes";
 import metropolisMod from "./size/metropolis";
 import cityMod from "./size/city";
-
+import IPossibleShop from "../db/interfaces/shop/possible_shops";
+import { PossibleShop } from "../db/schemas/shop/possible_shop";
 
 const storesNo = (pop: number, sv: number) => {
   const perPop = pop / sv;
@@ -27,7 +25,7 @@ const storesNo = (pop: number, sv: number) => {
   return perPopInt + (random <= rest ? 1 : 0);
 };
 
-const archetypeMap = (archetype: Archetype, shop: Shop): Shop => {
+const archetypeMap = (archetype: Archetype, shop: IPossibleShop): IPossibleShop => {
   if (archetype === "FARMING") {
     return farmingArchetypeMod(shop);
   }
@@ -52,11 +50,11 @@ const archetypeMap = (archetype: Archetype, shop: Shop): Shop => {
   return shop
 };
 
-const archetypeModifiers = (archetype: Archetype, shops: Shop[]): Shop[] => {
-  return shops.map((shop: Shop) => archetypeMap(archetype, shop));
+const archMods = (archetype: Archetype, shops: IPossibleShop[]): IPossibleShop[] => {
+  return shops.map((shop: IPossibleShop) => archetypeMap(archetype, shop));
 };
-const settlementSizeIncrementorModifiers = (size: SettlementSize, shops: Shop[]) => {
-  return shops.map((shop: Shop) => {
+const sizeIncMods = (size: SettlementSize, shops: IPossibleShop[]): IPossibleShop[] => {
+  return shops.map((shop: IPossibleShop) => {
     if (size === 'METROPOLIS') return metropolisMod(shop)
     if (size === 'CITY') return cityMod(shop)
     return shop
@@ -66,19 +64,14 @@ const magicLevelModifiers = () => { };
 const incrementorModifiers = () => { };
 const climateModififers = () => { };
 
-const generateSettlement = (
-  opt: SetOptions,
-  { pop, dist }: { pop: number; dist: any }
-) => {
-  // const posShops = getPossibleShops();
-  // const posShopsArchetype = settlementSizeIncrementorModifiers(opt.size, archetypeModifiers(opt.archetype, posShops));
-  // const numberShops = posShopsArchetype.map((shop: Shop) => ({ shop, quantity: storesNo(pop, shop.SV) })).filter((v) => v.quantity > 0)
-  // console.log(numberShops)
+const generateSettlement = async (opt: SetOptions) => {
+  const possibleShops = await PossibleShop.find({})
+  const adjustedShops = archMods(opt.archetype, sizeIncMods(opt.size, possibleShops))
+    .map((shop: IPossibleShop) => ({ shop, amount: storesNo(opt.population, shop.SV) }))
+    .filter(({ amount }) => amount > 0)
+
+  
 };
 
-interface Shop {
-  name: string;
-  SV: number;
-  count?: number;
-}
-export { generateSettlement, Shop };
+
+export { generateSettlement };

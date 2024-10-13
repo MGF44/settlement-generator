@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import ILandform from "../interfaces/land/landform";
+import ILandform from "../../interfaces/land/landform";
 
 const landformSchema = new Schema<ILandform>({
     name: { type: String, required: true },

@@ -1,7 +1,6 @@
 import { IClimate } from "../db/interfaces/land/climate";
 import ILandform from "../db/interfaces/land/landform";
 import { ISpecies } from "../db/interfaces/npc/species";
-import Landform from "../db/schemas/landform";
 
 interface SetOptions {
   name: string;
@@ -13,6 +12,7 @@ interface SetOptions {
   magicLevel: MagicLevel;
   archetype: Archetype;
   incrementor?: SettlementIncrementor;
+  population: number;
 }
 
 
@@ -31,7 +31,6 @@ type Archetype =
 export {
   SetOptions,
   Archetype,
-  Landform,
   SettlementSize,
   MagicLevel,
   SettlementIncrementor,

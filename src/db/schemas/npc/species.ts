@@ -1,5 +1,5 @@
 import { model, Schema, Types } from "mongoose";
-import { ISubSpecies, ISpecies } from "../interfaces/npc/species";
+import { ISubSpecies, ISpecies } from "../../interfaces/npc/species";
 
 const subSpeciesSchema = new Schema<ISubSpecies>({
     name: { type: String, required: true },

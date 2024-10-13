@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import { ISkin } from "../interfaces/skin";
+import { ISkin } from "../../interfaces/npc/skin";
 
 const skinSchema = new Schema<ISkin>({
     color: { type: String, required: true },

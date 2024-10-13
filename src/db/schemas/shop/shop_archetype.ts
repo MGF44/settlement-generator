@@ -1,5 +1,5 @@
 import { model, Schema, Types } from "mongoose";
-import IShopArchetype from "../interfaces/shop/shop_archetype";
+import IShopArchetype from "../../interfaces/shop/shop_archetype";
 
 const shopArchetypeSchema = new Schema<IShopArchetype>({
     archetype: { type: String, required: true },

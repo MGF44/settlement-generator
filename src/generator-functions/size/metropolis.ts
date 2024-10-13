@@ -1,6 +1,6 @@
-import { Shop } from "../settlements"
+import IPossibleShop from "../../db/interfaces/shop/possible_shops"
 
-const metropolisMod = (shop: Shop) => {
+const metropolisMod = (shop: IPossibleShop) => {
     const { SV } = shop
     switch (shop.name) {
         case "Butchers":
@@ -13,7 +13,7 @@ const metropolisMod = (shop: Shop) => {
         case "Weavers":
         case "Jewelers":
         case "Painters":
-            return { ...shop, SV: SV * 1.5 }
+            return Object.assign(shop, { SV: SV * 1.5 })
         case "Clergy":
         case "Apothecaries":
         case "Blacksmiths":
@@ -23,11 +23,11 @@ const metropolisMod = (shop: Shop) => {
         case "Mill":
         case "Carpenters":
         case "Noble Households":
-            return { ...shop, SV: SV * 2 }
+            return Object.assign(shop, { SV: SV * 2 })
         case "Brewery":
         case "Masons":
         case "Cartographer":
-            return { ...shop, SV: SV * 2.5 }
+            return Object.assign(shop, { SV: SV * 2.5 })
         case "Furriers":
         case "Saddlers":
         case "Temple":
@@ -37,13 +37,13 @@ const metropolisMod = (shop: Shop) => {
         case "Barracks":
         case "Barbers":
         case "Taverns/Restaurants":
-            return { ...shop, SV: SV * 4 }
+            return Object.assign(shop, { SV: SV * 4 })
         case "Animal Pound":
         case "Hay Merchants":
-            return { ...shop, SV: SV * 6 }
+            return Object.assign(shop, { SV: SV * 6 })
         case "Animal Supplies":
         case "Maidservants":
-            return { ...shop, SV: SV * 8 }
+            return Object.assign(shop, { SV: SV * 8 })
         default:
             return shop;
     }

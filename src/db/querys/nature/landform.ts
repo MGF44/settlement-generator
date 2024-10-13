@@ -1,5 +1,5 @@
-import ILandform from "../../interfaces/landform"
-import Landform from "../../schemas/landform"
+import ILandform from "../../interfaces/land/landform"
+import Landform from "../../schemas/land/landform"
 
 const getLandforms = async (): Promise<ILandform[]> => {
     return await Landform.find({})

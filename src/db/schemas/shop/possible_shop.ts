@@ -1,6 +1,5 @@
 import { model, Schema } from "mongoose";
-import IPossibleShop from "../interfaces/shop/possible_shops";
-
+import IPossibleShop from "../../interfaces/shop/possible_shops";
 
 const possibleShopSchema = new Schema<IPossibleShop>({
     name: { type: String, required: true },

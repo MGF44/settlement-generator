@@ -1,5 +1,5 @@
-import { ISpecies } from "../../interfaces/species"
-import { Species } from "../../schemas/species"
+import { ISpecies } from "../../interfaces/npc/species"
+import { Species } from "../../schemas/npc/species"
 
 const getSpecies = async (): Promise<ISpecies[]> => {
     return await Species.find({})

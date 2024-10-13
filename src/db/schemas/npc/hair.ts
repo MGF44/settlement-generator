@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import { IHair } from "../interfaces/npc/eyes_hair";
+import { IHair } from "../../interfaces/npc/eyes_hair";
 
 const hairSchema = new Schema<IHair>({
     color: { type: String, required: true },

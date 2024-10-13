@@ -9,6 +9,7 @@ import { IEyes, IHair } from "../db/interfaces/npc/eyes_hair";
 import IName from "../db/interfaces/npc/name";
 import { ISkin } from "../db/interfaces/npc/skin";
 import { ISpecies } from "../db/interfaces/npc/species";
+import INPC from "../db/schemas/npc/npc";
 interface NPC {
   name: string;
   species: ISpecies;
@@ -165,7 +166,8 @@ const randomGender = () => {
   return gender === "non-binary" ? randomInt(0, 1) === 0 ? "male" : "female" : gender;
 }
 
-const generateNPC = async (species: ISpecies) => {
+
+const generateNPC = async (species: ISpecies): Promise<INPC> => {
   const gender = randomGender()
   const name = await speciesNames(species, gender);
   const physical = await generatePhysical(species);
@@ -173,10 +175,10 @@ const generateNPC = async (species: ISpecies) => {
     name: name,
     gender,
     species,
-    eyes: physical.eyesColor.color,
-    hair: physical.hairColor.color,
-    skin: physical.skinColor.color,
-    additional: physical.addTraits,
+    eyes: physical.eyesColor,
+    hair: physical.hairColor,
+    skin: physical.skinColor,
+    additionalTraits: physical.addTraits,
   };
 };
 

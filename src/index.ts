@@ -15,12 +15,13 @@ import { getLandforms } from "./db/querys/nature/landform";
 import { getSpecies } from "./db/querys/species/species";
 import fs from 'fs'
 import genPopulation from "./generator-functions/population";
-import readInventoriesJSONs from "./generator-functions/stores";
 import IPossibleShop from "./db/interfaces/shop/possible_shops";
-import IShopArchetype from "./db/interfaces/shop/shop_archetype";
 import { IClimate } from "./db/interfaces/land/climate";
 import ILandform from "./db/interfaces/land/landform";
 import { ISpecies } from "./db/interfaces/npc/species";
+import { PossibleShop } from "./db/schemas/shop/possible_shop";
+import numberPops from "./generator-functions/population";
+import { generateSettlement } from "./generator-functions/settlements";
 dotenv.config();
 
 const createOptions = async (): Promise<SetOptions> => {
@@ -43,6 +44,8 @@ const createOptions = async (): Promise<SetOptions> => {
     .map((species: ISpecies, ix: number) => ({ species, distribution: distribution[ix] }))
     .filter((v: any) => v.distribution != 0);
 
+  const population = numberPops(size, incrementor)
+
   return {
     name: (Math.random() + 1).toString(36).substring(7),
     species: newSpecies,
@@ -53,25 +56,14 @@ const createOptions = async (): Promise<SetOptions> => {
     hasGuilds: true,
     incrementor,
     archetype,
+    population
   };
 };
-
-const getPossibleShops = (): IPossibleShop[] => {
-  const inventories = "./src/assets/random";
-  const json = JSON.parse(
-    fs.readFileSync(inventories + "/" + "shops_f.json", "utf8")
-  );
-  return json["UniqueProfessions"];
-};
-
 const startSettlementGenerator = async () => {
   const mdbe = await mongoose.connect(process.env.MONGODB_URI as string)
 
   const options = await createOptions()
-  const { pop, dist } = genPopulation(options);
-
-  const inventories: IShopArchetype[] = readInventoriesJSONs(options, pop)
-
+  const stores  = await generateSettlement(options)
 
 
   // const x = `
