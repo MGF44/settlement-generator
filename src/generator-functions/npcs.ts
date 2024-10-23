@@ -10,6 +10,7 @@ import IName from "../db/interfaces/npc/name";
 import { ISkin } from "../db/interfaces/npc/skin";
 import { ISpecies } from "../db/interfaces/npc/species";
 import INPC from "../db/schemas/npc/npc";
+import IRandomTrait from "../db/interfaces/npc/random_trait";
 interface NPC {
   name: string;
   species: ISpecies;
@@ -140,8 +141,7 @@ const choose = () => {
   }
 }
 
-const generatePhysical = async (species: ISpecies) => {
-  const { eyes, hair, skin, random } = await getPhysicalTraits();
+const generatePhysical = async (species: ISpecies, { eyes, hair, skin, random }: { eyes: IEyes[], hair: IHair[], skin: ISkin[], random: IRandomTrait[] }) => {
   const physFn = choose()
   const eyesColor = physFn.eyes(eyes, randomIntInc(1, eyes.length - 1), tGroupEyes(species));
   const hairColor = physFn.hair(hair, randomIntInc(1, hair.length - 1), tGroupHair(species));
@@ -166,11 +166,9 @@ const randomGender = () => {
   return gender === "non-binary" ? randomInt(0, 1) === 0 ? "male" : "female" : gender;
 }
 
-
-const generateNPC = async (species: ISpecies): Promise<INPC> => {
+const generateNPC = async (species: ISpecies, physical: { eyesColor: IEyes, hairColor: IHair, skinColor: ISkin, addTraits: IRandomTrait | undefined }): Promise<INPC> => {
   const gender = randomGender()
   const name = await speciesNames(species, gender);
-  const physical = await generatePhysical(species);
   return {
     name: name,
     gender,
@@ -182,16 +180,30 @@ const generateNPC = async (species: ISpecies): Promise<INPC> => {
   };
 };
 
-const genRandomNPC = async (options: SetOptions) => {
+const getRandomSpecies = (options: SetOptions) => {
   const { species } = options
   const sum = species.reduce((p, n) => p + n.distribution, 0)
-  const random = randomInt(1, sum + 1);
-  const chosen = species
-    .map(({ distribution, species }) => ({ species, distribution: Math.abs((distribution as number) - random) }))
+  return species
+    .map(({ distribution, species }) => ({ species, distribution: Math.abs((distribution as number) - randomInt(1, sum + 1)) }))
     .reduce((prev, n) => (prev.distribution < n.distribution ? prev : n));
-  return generateNPC(chosen.species);
-};
+}
 
-export default genRandomNPC;
+const generate = async (options: SetOptions) => {
+  const { eyes, hair, skin, random } = await getPhysicalTraits()
+  return {
+    random: async () => {
+      const { species } = getRandomSpecies(options)
+      const physical = await generatePhysical(species, { eyes, hair, skin, random })
+      return generateNPC(species, physical)
+    },
+    npc: async (species: ISpecies) => {
+      const physical = await generatePhysical(species, { eyes, hair, skin, random })
+      return generateNPC(species, physical)
+    }
+  }
+}
 
-export { generateNPC };
+
+
+export default generate;
+

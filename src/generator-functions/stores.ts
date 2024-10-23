@@ -10,7 +10,7 @@ import { PossibleShop } from "../db/schemas/shop/possible_shop";
 import IPossibleShop from "../db/interfaces/shop/possible_shops";
 import { ShopArchetype } from "../db/schemas/shop/shop_archetype";
 import INPC from "../db/schemas/npc/npc";
-import genRandomNPC, { generateNPC } from "./npcs";
+import genRandomNPC from "./npcs";
 import randomInt, { randomIntInc } from "../shared/random-int";
 
 type StoreType = 'ADVENTURING SUPPLIES' |
@@ -43,9 +43,11 @@ class Store {
   _inventory: InventoryItem[] = [];
   storeOwner!: INPC;
   storeApprentices?: INPC[]
-  constructor(name: string, owner: INPC, shopType: string, inventory?: InventoryItem[], archetype?: StoreType) {
+  constructor(name: string, shopType: string, owner?: INPC, inventory?: InventoryItem[], archetype?: StoreType) {
     this.storeName = name
-    this.storeOwner = owner
+    if (owner) {
+      this.storeOwner = owner
+    }
     this.shopType = shopType
     if (inventory) {
       this.inventory = inventory;
@@ -74,27 +76,31 @@ class Store {
   addApprentice(npc: INPC) {
     this.storeApprentices?.push(npc)
   }
+
+  addOwner(npc: INPC) {
+    this.storeOwner = npc
+  }
 }
 
-const generateStore = async (shop: IPossibleShop, opt: SetOptions) => {
-  const name = (Math.random() + 1).toString(36).substring(7);
-  const owner = await genRandomNPC(opt);
-  const store = new Store(name, owner, shop.name)
-  const random = randomIntInc(0, 1)
-  if (random === 0) {
-    const noApprentices = randomIntInc(1, 3);
-    [...Array(noApprentices).keys()]
-      .forEach(async () => {
-        const apprentice = await genRandomNPC(opt)
-        store.addApprentice(apprentice)
-      })
-  }
-  if (shop.archetype) {
-    store.archetype = shop.archetype as StoreType
-    const res = await ShopArchetype.findOne({ archetype: shop.archetype })
-    store.inventory = res?.inventory || []
-  }
-  return store;
-}
+// const generateStore = async (shop: IPossibleShop, opt: SetOptions) => {
+//   const name = (Math.random() + 1).toString(36).substring(7);
+//   const owner = await genRandomNPC(opt);
+//   const store = new Store(name, owner, shop.name)
+//   const random = randomIntInc(0, 1)
+//   if (random === 0) {
+//     const noApprentices = randomIntInc(1, 3);
+//     [...Array(noApprentices).keys()]
+//       .forEach(async () => {
+//         const apprentice = await genRandomNPC(opt)
+//         store.addApprentice(apprentice)
+//       })
+//   }
+//   if (shop.archetype) {
+//     store.archetype = shop.archetype as StoreType
+//     const res = await ShopArchetype.findOne({ archetype: shop.archetype })
+//     store.inventory = res?.inventory || []
+//   }
+//   return store;
+// }
 
-export { generateStore, Store }
+export { Store, StoreType }

@@ -16,7 +16,10 @@ import metropolisMod from "./size/metropolis";
 import cityMod from "./size/city";
 import IPossibleShop from "../db/interfaces/shop/possible_shops";
 import { PossibleShop } from "../db/schemas/shop/possible_shop";
-import { generateStore } from "./stores";
+import { Store } from "./stores";
+import { getPossibleShops } from "../db/querys/shop/possible-shops";
+import generate from "./npcs";
+import randomInt from "../shared/random-int";
 
 const storesNo = (pop: number, sv: number) => {
   const perPop = pop / sv;
@@ -65,13 +68,46 @@ const magicLevelModifiers = () => { };
 const incrementorModifiers = () => { };
 const climateModififers = () => { };
 
-const generateSettlement = async (opt: SetOptions) => {
-  const possibleShops = await PossibleShop.find({})
-  const adjustedShops = archMods(opt.archetype, sizeIncMods(opt.size, possibleShops))
+
+
+const getShops = async (opt: SetOptions) => {
+  const posShops = await getPossibleShops()
+  return archMods(opt.archetype, sizeIncMods(opt.size, posShops))
     .map((shop: IPossibleShop) => ({ shop, amount: storesNo(opt.population, shop.SV) }))
-    .filter(({ amount }) => amount > 0)
-  return await Promise.all(adjustedShops.map(async ({ shop, amount }) => Promise.all([...Array(amount).keys()].map(async () => await generateStore(shop, opt)))))
-};
+    .filter(({ amount }) => amount > 0);
+}
+
+async function* generateShopsForSettlement(opt: SetOptions) {
+  const shops = (await getShops(opt)).sort((a, b) => a.amount - b.amount)
+  const npcGen = await generate(opt)
+  for (let ix = 0; ix < shops.length; ix++) {
+    const { shop, amount } = shops[ix];
+    const stores = []
+    for (let innerIx = 0; innerIx < amount; innerIx++) {
+      const name = (Math.random() + 1).toString(36).substring(7);
+      const owner = await npcGen.random()
+      const store = new Store(name, shop.type)
+      if (shop.archetype) {
+        store.archetype = shop.archetype
+      }
+      store.storeName = shop.name;
+      store.addOwner(owner);
+      if (randomInt(0, 2) === 0) {
+        store.addApprentice(await npcGen.npc(owner.species))
+      }
+      stores.push(store)
+    }
+    yield stores;
+  }
+}
+
+// const generateSettlementShops = async (opt: SetOptions) => {
+//   const possibleShops = await getPossibleShops()
+//   const adjustedShops = archMods(opt.archetype, sizeIncMods(opt.size, possibleShops))
+//     .map((shop: IPossibleShop) => ({ shop, amount: storesNo(opt.population, shop.SV) }))
+//     .filter(({ amount }) => amount > 0)
+//   return await Promise.all(adjustedShops.map(async ({ shop, amount }) => Promise.all([...Array(amount).keys()].map(async () => await generateStore(shop, opt)))))
+// };
 
 
-export { generateSettlement };
+export { generateShopsForSettlement };
