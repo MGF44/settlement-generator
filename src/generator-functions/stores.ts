@@ -82,25 +82,5 @@ class Store {
   }
 }
 
-// const generateStore = async (shop: IPossibleShop, opt: SetOptions) => {
-//   const name = (Math.random() + 1).toString(36).substring(7);
-//   const owner = await genRandomNPC(opt);
-//   const store = new Store(name, owner, shop.name)
-//   const random = randomIntInc(0, 1)
-//   if (random === 0) {
-//     const noApprentices = randomIntInc(1, 3);
-//     [...Array(noApprentices).keys()]
-//       .forEach(async () => {
-//         const apprentice = await genRandomNPC(opt)
-//         store.addApprentice(apprentice)
-//       })
-//   }
-//   if (shop.archetype) {
-//     store.archetype = shop.archetype as StoreType
-//     const res = await ShopArchetype.findOne({ archetype: shop.archetype })
-//     store.inventory = res?.inventory || []
-//   }
-//   return store;
-// }
 
 export { Store, StoreType }

@@ -1,4 +1,4 @@
-import { IClimate } from "../db/interfaces/land/climate";
+import { IClimate, ISubClimate } from "../db/interfaces/land/climate";
 import ILandform from "../db/interfaces/land/landform";
 import { ISpecies } from "../db/interfaces/npc/species";
 
@@ -6,7 +6,7 @@ interface SetOptions {
   name: string;
   species: { species: ISpecies, distribution: number }[];
   terrain: ILandform;
-  climate: IClimate;
+  climate: ISubClimate;
   size: SettlementSize;
   hasGuilds: Boolean;
   magicLevel: MagicLevel;

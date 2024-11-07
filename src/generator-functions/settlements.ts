@@ -1,5 +1,6 @@
 import {
   Archetype,
+  MagicLevel,
   SetOptions,
   SettlementSize,
 } from "../types/generator-options";
@@ -20,6 +21,9 @@ import { Store } from "./stores";
 import { getPossibleShops } from "../db/querys/shop/possible-shops";
 import generate from "./npcs";
 import randomInt from "../shared/random-int";
+import noMagicMod from "./magic/noMagic";
+import lowMagicMod from "./magic/lowMagic";
+import highMagicMod from "./magic/highMagic";
 
 const storesNo = (pop: number, sv: number) => {
   const perPop = pop / sv;
@@ -64,20 +68,27 @@ const sizeIncMods = (size: SettlementSize, shops: IPossibleShop[]): IPossibleSho
     return shop
   })
 };
-const magicLevelModifiers = () => { };
-const incrementorModifiers = () => { };
-const climateModififers = () => { };
-
+const magicLevelModifiers = (size: SettlementSize, ml: MagicLevel, shops: IPossibleShop[]): IPossibleShop[] => {
+  return shops.map((shop: IPossibleShop) => {
+    if (size === 'SETTLEMENT' || size === 'VILLAGE') return shop
+    if (ml === 'NO_MAGIC') return noMagicMod(shop)
+    if (ml === 'LOW_MAGIC') return lowMagicMod(shop)
+    if (ml === 'HIGH_MAGIC') return highMagicMod(shop)
+    return shop
+  })
+};
 
 
 const getShops = async (opt: SetOptions) => {
   const posShops = await getPossibleShops()
-  return archMods(opt.archetype, sizeIncMods(opt.size, posShops))
+
+  return magicLevelModifiers(opt.size, opt.magicLevel, archMods(opt.archetype, sizeIncMods(opt.size, posShops)))
     .map((shop: IPossibleShop) => ({ shop, amount: storesNo(opt.population, shop.SV) }))
     .filter(({ amount }) => amount > 0);
 }
 
 async function* generateShopsForSettlement(opt: SetOptions) {
+  
   const shops = (await getShops(opt)).sort((a, b) => a.amount - b.amount)
   const npcGen = await generate(opt)
   for (let ix = 0; ix < shops.length; ix++) {
@@ -100,14 +111,5 @@ async function* generateShopsForSettlement(opt: SetOptions) {
     yield stores;
   }
 }
-
-// const generateSettlementShops = async (opt: SetOptions) => {
-//   const possibleShops = await getPossibleShops()
-//   const adjustedShops = archMods(opt.archetype, sizeIncMods(opt.size, possibleShops))
-//     .map((shop: IPossibleShop) => ({ shop, amount: storesNo(opt.population, shop.SV) }))
-//     .filter(({ amount }) => amount > 0)
-//   return await Promise.all(adjustedShops.map(async ({ shop, amount }) => Promise.all([...Array(amount).keys()].map(async () => await generateStore(shop, opt)))))
-// };
-
 
 export { generateShopsForSettlement };
