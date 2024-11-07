@@ -15,6 +15,7 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.7.4",
+    "@types/ws": "^8.5.13",
     "nodemon": "^3.1.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.2"
@@ -28,6 +29,7 @@
     "express": "^4.21.1",
     "mongoose": "^8.7.1",
     "node-fetch": "^3.3.2",
-    "openai": "^4.67.1"
+    "openai": "^4.67.1",
+    "ws": "^8.18.0"
   }
 }

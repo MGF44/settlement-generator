@@ -38,12 +38,12 @@ async function* createSettlement(opt: SetOptions) {
 
 
 const setGen = async (req: Request, res: Response) => {
-    console.log('pimba')
-    res.setHeader('Cache-Control', 'no-cache');
-    res.setHeader('Content-Type', 'text/event-stream');
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Connection', 'keep-alive');
-    res.flushHeaders();
+    console.log(req.body)
+    res.writeHead(200, {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive'
+    });
 
     const { name, climate, landform, archetype, species, size, incrementor, mLevel } = req.body
     const options: SetOptions = {
