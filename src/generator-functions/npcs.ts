@@ -11,6 +11,7 @@ import { ISkin } from "../db/interfaces/npc/skin";
 import { ISpecies } from "../db/interfaces/npc/species";
 import INPC from "../db/schemas/npc/npc";
 import IRandomTrait from "../db/interfaces/npc/random_trait";
+import { getSpecies } from "../db/querys/species/species";
 interface NPC {
   name: string;
   species: ISpecies;
@@ -203,7 +204,23 @@ const generate = async (options: SetOptions) => {
   }
 }
 
-
+const gen = async () => {
+  const { eyes, hair, skin, random } = await getPhysicalTraits()
+  return {
+    random: async () => {
+      const species = await getSpecies()
+      const specie = species[Math.floor(Math.random() * species.length)]
+      const physical = await generatePhysical(specie, { eyes, hair, skin, random })
+      return generateNPC(specie, physical)
+    },
+    npc: async (specie: ISpecies) => {
+      const physical = await generatePhysical(specie, { eyes, hair, skin, random })
+      return generateNPC(specie, physical)
+    }
+  }
+}
 
 export default generate;
 
+
+export { gen }

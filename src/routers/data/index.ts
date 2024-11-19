@@ -25,9 +25,6 @@ router.get('/species', (req, res) => {
         .then((value: ISpecies[]) => res.json(value))
         .catch((reason) => res.status(500).send(reason))
 })
-// define the about route
-router.get('/about', (req, res) => {
-    res.send('About birds')
-})
+
 
 export default router;
