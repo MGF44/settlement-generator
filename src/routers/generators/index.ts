@@ -1,9 +1,9 @@
-import express from 'express'
+import { Router } from 'express'
 import { gen } from '../../generator-functions/npcs'
 import INPC from '../../db/schemas/npc/npc'
 
 
-const router = express.Router()
+const router = Router()
 
 router.post('/npc', (req, res) => {
     const { species } = req.body

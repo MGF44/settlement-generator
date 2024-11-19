@@ -1,12 +1,11 @@
-import express, { Request, Response } from 'express'
+import { Request, Response, Router } from 'express'
 import { getClimates } from '../../db/querys/nature/climate'
 import { IClimate } from '../../db/interfaces/land/climate'
 import ILandform from '../../db/interfaces/land/landform'
 import { getLandforms } from '../../db/querys/nature/landform'
 import { getSpecies } from '../../db/querys/species/species'
 import { ISpecies } from '../../db/interfaces/npc/species'
-
-const router = express.Router()
+const router = Router()
 
 router.get('/climates', (req, res) => {
     getClimates()
