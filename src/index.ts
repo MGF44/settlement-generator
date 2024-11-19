@@ -26,7 +26,7 @@ const serverStartup = async () => {
   app.use('/default-data', dataRouter)
   app.use('/gen', genRouter)
 
-  app.listen(3000, async () => {
+  app.listen(PORT, async () => {
     console.log(`Server started at port ${PORT}`)
   })
 }
