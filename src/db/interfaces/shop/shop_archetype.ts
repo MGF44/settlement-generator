@@ -1,4 +1,4 @@
-import IInventoryItem from "../inventory_item";
+import IInventoryItem from "./inventory_item";
 
 interface IShopArchetype {
     archetype: string;

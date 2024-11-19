@@ -1,4 +1,4 @@
-import Generic from "./generic";
+import Generic from "../npc/generic";
 
 interface ILandform extends Generic { }
 

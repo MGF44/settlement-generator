@@ -1,17 +1,5 @@
-import { log } from "console";
-import fs from "fs";
-import { InventoryItem, InventoryItemAvailability } from "../types/store";
-import { SetOptions } from "../types/generator-options";
-import path from "path";
-import capitalize from "../shared/capitalize";
-import IInventoryItem from "../db/interfaces/shop/inventory_item";
-import IShopArchetype from "../db/interfaces/shop/shop_archetype";
-import { PossibleShop } from "../db/schemas/shop/possible_shop";
-import IPossibleShop from "../db/interfaces/shop/possible_shops";
-import { ShopArchetype } from "../db/schemas/shop/shop_archetype";
+import { InventoryItem } from "../types/store";
 import INPC from "../db/schemas/npc/npc";
-import genRandomNPC from "./npcs";
-import randomInt, { randomIntInc } from "../shared/random-int";
 
 type StoreType = 'ADVENTURING SUPPLIES' |
   'ADVENTURING SUPPLIES_ARTS' |
