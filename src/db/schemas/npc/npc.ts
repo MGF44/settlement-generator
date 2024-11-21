@@ -11,7 +11,8 @@ interface INPC {
     eyes: IEyes;
     hair: IHair;
     skin: ISkin;
-    additionalTraits?: IRandomTrait ;
+    additionalTraits?: IRandomTrait;
+    age?: number;
 }
 
 export default INPC;

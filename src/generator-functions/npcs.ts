@@ -4,7 +4,7 @@ import { getRandomTraits } from "../db/querys/physical-traits/random";
 import { getSkinColors } from "../db/querys/physical-traits/skin";
 import { getSpeciesNames } from "../db/querys/species/names";
 import randomInt, { randomIntInc } from "../shared/random-int";
-import { SetOptions } from "../types/generator-options";
+import { NPCAge, SetOptions } from "../types/generator-options";
 import { IEyes, IHair } from "../db/interfaces/npc/eyes_hair";
 import IName from "../db/interfaces/npc/name";
 import { ISkin } from "../db/interfaces/npc/skin";
@@ -12,6 +12,7 @@ import { ISpecies } from "../db/interfaces/npc/species";
 import INPC from "../db/schemas/npc/npc";
 import IRandomTrait from "../db/interfaces/npc/random_trait";
 import { getSpecies } from "../db/querys/species/species";
+
 interface NPC {
   name: string;
   species: ISpecies;
@@ -19,23 +20,42 @@ interface NPC {
   appearance: string;
   age: number;
 }
-
-// HAIR COLOR
-// Basic: Humans and other mundane races.
-// Exotic: Perhaps elves or more feral, sylvan or unusual ancestry races.
-// Pale: Celestials or perhaps plane touched.
-// Fey: Fey or other varied hair color races.
-
-// EYE COLOR
-// Basic: Humans and other mundane races.
-// Exotic: Perhaps elves or more feral, sylvan or unusual ancestry races.
-// Pale: Celestials or perhaps plane touched.
-// Fey: Fey or other varied eye color races.
-
-// SKIN COLOR
-// Basic: Humans and other mundane races.
-// Exotic: Perhaps elves or more feral, sylvan or unusual ancestry races.
-// Fey: Fey or other varied skin tone races.
+const minMax = (child: number[], young: number[], adult: number[], senior: number[]) => {
+  const [minChild, maxChild] = child;
+  const [minYoung, maxYoung] = young;
+  const [minAdult, maxAdult] = adult;
+  const [minSenior, maxSenior] = senior;
+  return {
+    'CHILD': { min: minChild, max: maxChild },
+    'YOUNG_ADULT': { min: minYoung, max: maxYoung },
+    'ADULT': { min: minAdult, max: maxAdult },
+    'SENIOR': { min: minSenior, max: maxSenior }
+  }
+}
+const getAge = (specie: ISpecies, group: NPCAge) => {
+  const selector = {
+    'Aarakocra': [[1, 3], [4, 10], [11, 22], [23, 30]],
+    'Aasimar': [[1, 16], [17, 40], [41, 130], [131, 160]],
+    'Dragonborn': [[1, 15], [16, 30], [31, 60], [61, 80]],
+    'Dwarf': [[1, 50], [51, 90], [91, 300], [301, 350]],
+    'Elf': [[1, 100], [101, 200], [201, 650], [651, 750]],
+    'Firbolg': [[1, 100], [101, 200], [201, 650], [651, 750]],
+    'Genasi': [[1, 16], [17, 30], [31, 80], [81, 120]],
+    'Gnome': [[1, 40], [41, 100], [101, 300], [301, 350]],
+    'Goliath': [[1, 15], [16, 30], [31, 60], [61, 80]],
+    'Halfling': [[1, 20], [21, 80], [81, 200], [201, 250]],
+    'Halfelf': [[1, 20], [21, 40], [41, 150], [151, 180]],
+    'Human': [[1, 16], [17, 30], [31, 60], [61, 80]],
+    'Kobold': [[1, 6], [7, 20], [21, 80], [81, 120]],
+    'Orc': [[1, 12], [13, 20], [21, 40], [41, 50]],
+    'Tiefling': [[1, 16], [17, 30], [31, 70], [71, 100]],
+    'Tortle': [[1, 15], [16, 25], [26, 40], [41, 50]],
+  };
+  console.log(specie.name, group)
+  const [child, young, adult, senior] = (selector as any)[specie.name]
+  const { min, max } = (minMax(child, young, adult, senior) as any)[group]
+  return randomIntInc(min, max)
+}
 
 const tGroupEyes = (species: ISpecies): string => {
   switch (species.name) {
@@ -167,9 +187,12 @@ const randomGender = () => {
   return gender === "non-binary" ? randomInt(0, 1) === 0 ? "male" : "female" : gender;
 }
 
-const generateNPC = async (species: ISpecies, physical: { eyesColor: IEyes, hairColor: IHair, skinColor: ISkin, addTraits: IRandomTrait | undefined }): Promise<INPC> => {
+const generateNPC = async (species: ISpecies, physical: { eyesColor: IEyes, hairColor: IHair, skinColor: ISkin, addTraits: IRandomTrait | undefined }, ageGroup?: NPCAge): Promise<INPC> => {
   const gender = randomGender()
   const name = await speciesNames(species, gender);
+  const age = ['CHILD', 'YOUNG_ADULT', 'ADULT', 'SENIOR'][randomInt(0, 4)]
+
+
   return {
     name: name,
     gender,
@@ -178,6 +201,7 @@ const generateNPC = async (species: ISpecies, physical: { eyesColor: IEyes, hair
     hair: physical.hairColor,
     skin: physical.skinColor,
     additionalTraits: physical.addTraits,
+    ...(!!ageGroup && { age: getAge(species, ageGroup === 'RANDOM' ? age as NPCAge : ageGroup) })
   };
 };
 
@@ -207,15 +231,15 @@ const generate = async (options: SetOptions) => {
 const gen = async () => {
   const { eyes, hair, skin, random } = await getPhysicalTraits()
   return {
-    random: async () => {
+    random: async (ageGroup?: NPCAge) => {
       const species = await getSpecies()
       const specie = species[Math.floor(Math.random() * species.length)]
       const physical = await generatePhysical(specie, { eyes, hair, skin, random })
-      return generateNPC(specie, physical)
+      return generateNPC(specie, physical, ageGroup)
     },
-    npc: async (specie: ISpecies) => {
+    npc: async (specie: ISpecies, ageGroup?: NPCAge) => {
       const physical = await generatePhysical(specie, { eyes, hair, skin, random })
-      return generateNPC(specie, physical)
+      return generateNPC(specie, physical, ageGroup)
     }
   }
 }

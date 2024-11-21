@@ -1,14 +1,20 @@
 import { Router } from 'express'
 import { gen } from '../../generator-functions/npcs'
 import INPC from '../../db/schemas/npc/npc'
+import { ISpecies } from '../../db/interfaces/npc/species'
 
 
 const router = Router()
 
 router.post('/npc', (req, res) => {
-    const { species } = req.body
     gen()
-        .then((fns) => species ? fns.npc(species) : fns.random())
+        .then((fns) => {
+            const { species, ageGroup } = req.body
+            if (!!Object.keys(species).length) {
+                return fns.npc(species, ageGroup)
+            }
+            return fns.random(ageGroup)
+        })
         .then((npc: INPC) => {
             const npcRes = {
                 name: npc.name.name,
@@ -16,11 +22,15 @@ router.post('/npc', (req, res) => {
                 species: npc.species.name,
                 eyes: npc.eyes.color,
                 hair: npc.hair.color,
-                skin: npc.skin.color
+                skin: npc.skin.color,
+                age: npc.age
             }
             res.status(200).send(npcRes)
         })
-        .catch((e) => res.status(500).send(e))
+        .catch((e) => {
+            console.log(e)
+            res.status(500).send(e)
+        })
 })
 
 

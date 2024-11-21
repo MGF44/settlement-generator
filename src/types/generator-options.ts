@@ -14,8 +14,9 @@ interface SetOptions {
   incrementor?: SettlementIncrementor;
   population: number;
 }
+// CHILD // YOUNG ADULT // ADULT // SENIOR
 
-
+type NPCAge = 'CHILD' | 'YOUNG_ADULT' | "ADULT" | "SENIOR" | 'RANDOM'
 type SettlementSize = "SETTLEMENT" | "VILLAGE" | "TOWN" | "CITY" | "METROPOLIS";
 type SettlementIncrementor = "SMALL" | "REGULAR" | "LARGE";
 type MagicLevel = "NO_MAGIC" | "LOW_MAGIC" | "COMMON_MAGIC" | "HIGH_MAGIC";
@@ -34,4 +35,5 @@ export {
   SettlementSize,
   MagicLevel,
   SettlementIncrementor,
+  NPCAge
 };
