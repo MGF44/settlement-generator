@@ -10,7 +10,7 @@ router.post('/npc', (req, res) => {
     gen()
         .then((fns) => {
             const { species, ageGroup } = req.body
-            if (!!Object.keys(species).length) {
+            if (!!species) {
                 return fns.npc(species, ageGroup)
             }
             return fns.random(ageGroup)
@@ -28,8 +28,7 @@ router.post('/npc', (req, res) => {
             res.status(200).send(npcRes)
         })
         .catch((e) => {
-            console.log(e)
-            res.status(500).send(e)
+            return res.status(500).send(e)
         })
 })
 
